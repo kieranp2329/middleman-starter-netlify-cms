@@ -73,13 +73,13 @@ collections:
         label: Units
         name: units
         fields:
-          - label: Currency
+          - label: Estimated Price £ 
             name: currency
             widget: select
             options: ['€', '$', '£']
             default: '€'
 
-          - label: Weight
+          - label: Rarity
             name: weight
             widget: select
             options: ['kg', ' st', ' lb']
