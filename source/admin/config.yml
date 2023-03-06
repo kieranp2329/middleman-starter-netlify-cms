@@ -20,8 +20,8 @@ collections:
       - {label: Publish Date, name: date, widget: datetime}
       - {label: Image, name: image, widget: image, required: true}
 
-      - {label: Weight, name: weight, widget: number}
-      - {label: Price, name: price, widget: number}
+      - {label: Rarity 1-10 , name: weight, widget: number}
+      - {label: Estimated Price, name: price, widget: number}
       - {label: Body, name: body, widget: markdown}
 
 #markdown middleman blog example
@@ -73,13 +73,13 @@ collections:
         label: Units
         name: units
         fields:
-          - label: Estimated Price £ 
+          - label: Currency
             name: currency
             widget: select
             options: ['€', '$', '£']
             default: '€'
 
-          - label: Rarity
+          - label: Weight
             name: weight
             widget: select
             options: ['kg', ' st', ' lb']
