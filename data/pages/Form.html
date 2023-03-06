@@ -1,11 +1,4 @@
----
-title: Wow
----
-
-section.hero style=background_image(image_path(data.pages.home.hero.image))
-  .caption
-    .row
-      h1 == "  <h1>Submit an offer for auction</h1>
+  <h1>Submit an offer for auction</h1>
           <p>Please put your name, contact details, and bidding offer below.</p>
   		  <form name="Lotting" netlify>
             <div class="form_settings">
@@ -18,31 +11,4 @@ section.hero style=background_image(image_path(data.pages.home.hero.image))
   			  
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Submit" /></p>
             </div> 
-  			  </form>"
-
-section.homepage-story
-  .container
-    .row
-      .story-content
-        = markdown data.pages.home.story
-
-section.homepage-products.products
-  .container
-    h2
-      | Products
-    .row
-      //product is structured: ['filename', 'data']
-      //sort by newest product
-      - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-
-        //to get the actual data:
-        = partial 'partials/products/product', locals: {product: product}
-
-section.homepage-news.news
-  .container
-    h2
-      | News
-    .news-items
-      //get the first two most recent posts
-      - blog.articles.first(2).each do | article |
-        = partial 'partials/news/news_item', locals: {article: article}
+  			  </form>
