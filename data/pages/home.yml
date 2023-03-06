@@ -1,44 +1,5 @@
 hero:
   image: /images/uploads/homepage-hero.jpg
   title: Place a Bid
-story: "<h1>Submit an offer for auction</h1>\r
-
-  \          <p>Please put your name, contact details, and bidding offer
-  below.</p>\r
-
-  \  \t\t  <form name=\"Lotting\" netlify>\r
-
-  \            <div class=\"form_settings\">\r
-
-  \              <p><span>Name</span><input class=\"contact\" type=\"text\"
-  name=\"your_name\" value=\"\" placeholder=\"John Doe\"/></p>\r
-
-  \              <p><span>Email Address</span><input class=\"contact\"
-  type=\"text\" name=\"your_email\" value=\"\" placeholder=\"example@email.com\"
-  /></p>\r
-
-  \  \t\t\t  <p><span>Phone Number</span><input class=\"contact\"
-  type=\"text\" name=\"Phone number\" value=\"\" placeholder=\"+44
-  1234567890\"/></p>\r
-
-  \              <p><span>Bid Amount</span><input type=\"text\"
-  name=\"currency-field\" id=\"currency-field\" value=\"\"
-  data-type=\"currency\" placeholder=\"99.99\"></p>\r
-
-  \  \t\t\t  <p><span>Lot Number</span>\r
-
-  \  <input name=\"Lot Number\" class=\"contact\" type=\"number\" min=\"1\"
-  max=\"80\" id=\"numberSize\" oninput=\"(!validity.rangeOverflow||(value=80))
-  && (!validity.rangeUnderflow||(value=1)) &&
-  (!validity.stepMismatch||(value=parseInt(this.value)));\"
-  placeholder=\"1-80\"/></p>\r
-
-  \  \t\t\t  \r
-
-  \              <p style=\"padding-top: 15px\"><span>&nbsp;</span><input
-  class=\"submit\" type=\"submit\" name=\"contact_submitted\" value=\"Submit\"
-  /></p>\r
-
-  \            </div> \r
-
-  \  \t\t\t  </form>"
+story: -<
+        This will be where your introduction is stored
