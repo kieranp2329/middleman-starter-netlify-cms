@@ -4,7 +4,7 @@ backend:
 media_folder: source/images/uploads
 public_folder: /images/uploads
 
-#publish_mode: editorial_workflow #optional, enables publishing workflow
+publish_mode: editorial_workflow #optional, enables publishing workflow
 
 collections:
   #yaml middleman data example
@@ -41,6 +41,7 @@ collections:
 
   - name: pages
     label: Pages
+    create: true
     files:
       - file: "data/pages/home.yml"
         label: Homepage
