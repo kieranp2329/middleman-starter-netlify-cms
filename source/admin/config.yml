@@ -26,7 +26,7 @@ collections:
 
 #markdown middleman blog example
   - name: blog
-    label: Blog
+    label: Previous Auctions
     folder: source/posts/
     extension: .html.md
     format: frontmatter
