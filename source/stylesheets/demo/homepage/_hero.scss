@@ -16,6 +16,7 @@
     margin: 0;
     padding-top: 20%;
 	color: rgba(213, 184, 255, 1);
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
     @media screen and (max-width: $screen-md-max){
       padding-top: 15%;
