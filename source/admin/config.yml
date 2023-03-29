@@ -79,7 +79,7 @@ collections:
             options: ['Estimated Price £ ']
             default: 'Estimated Price £ '
 
-          - label: Lot: 
+          - label: Lot 
             name: weight
             widget: select
             options: ['Lot: ']
