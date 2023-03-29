@@ -33,7 +33,7 @@ const ProductPreview = ({ entry, widgetFor }) => {
             <span>{`Lot Number: ${data.weight} `}</span>
           </div>
           <div className="price">
-            <span>{`Estimated Value: £${data.price}`}</span>
+            <span>{`Current Price: £${data.price}`}</span>
           </div>
         </div>
         <div className="body">{widgetFor('body')}</div>
@@ -70,7 +70,7 @@ const NavigationPreview = ({ entry }) => {
     <header className="header-primary">
       <div className="logo">
         <a href="/">
-          <img src="/images/logo.svg" alt="Kaldi"/>
+          <img src="/images/logo.svg" alt="Website by @heavierain on Instgram"/>
         </a>
       </div>
       <a className="nav-button">

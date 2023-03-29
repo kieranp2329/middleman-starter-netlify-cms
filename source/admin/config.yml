@@ -20,7 +20,7 @@ collections:
       - {label: Image, name: image, widget: image, required: true}
 
       - {label: Lot , name: weight, widget: number}
-      - {label: Estimated Price, name: price, widget: number}
+      - {label: Current Price, name: price, widget: number}
       - {label: Body, name: body, widget: markdown}
 
 #markdown middleman blog example
