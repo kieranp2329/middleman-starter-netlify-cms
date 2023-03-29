@@ -12,3 +12,5 @@
           = currency + product.price.to_s 
       .weight
         p 
+          - weight = data.settings.units.weight || 'kg'
+          = product.weight.to_s + weight

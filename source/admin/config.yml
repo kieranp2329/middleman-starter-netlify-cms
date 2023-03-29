@@ -20,7 +20,7 @@ collections:
       - {label: Publish Date, name: date, widget: datetime}
       - {label: Image, name: image, widget: image, required: true}
 
-      - {label: Rarity 1-10 , name: weight, widget: number}
+      - {label: Lot Number , name: weight, widget: number}
       - {label: Estimated Price, name: price, widget: number}
       - {label: Body, name: body, widget: markdown}
 
