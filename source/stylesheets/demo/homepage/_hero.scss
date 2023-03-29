@@ -15,7 +15,7 @@
     @extend %col-xs-8;
     margin: 0;
     padding-top: 20%;
-	color: rgba(213, 184, 255, 1);
+	color: $primary-color;
 	text-shadow: -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
 
     @media screen and (max-width: $screen-md-max){
