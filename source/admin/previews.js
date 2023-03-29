@@ -33,7 +33,7 @@ const ProductPreview = ({ entry, widgetFor }) => {
             <span>{`Lot Number: ${data.weight} `}</span>
           </div>
           <div className="price">
-            <span>{`Estimated Value: ${data.price}`}</span>
+            <span>{`Estimated Value: £${data.price}`}</span>
           </div>
         </div>
         <div className="body">{widgetFor('body')}</div>
