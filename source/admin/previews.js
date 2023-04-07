@@ -1,3 +1,5 @@
+import dayjs from 'dayjs'
+
 const BlogPreview = ({ entry, widgetFor }) => {
   const data = entry.get('data').toJS()
   const date = dayjs(data.date).format('DD-MM-YY')
@@ -37,6 +39,11 @@ const ProductPreview = ({ entry, widgetFor }) => {
           </div>
         </div>
         <div className="body">{widgetFor('body')}</div>
+        <div className="paypal-button">
+          <form action={`https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${data.paypal_button.item_name}&amount=${data.paypal_button.price}&currency_code=GBP&business=${data.paypal_button.paypal_email}`} method="post" target="_blank">
+            <button type="submit">Buy Now</button>
+          </form>
+        </div>
       </div>
     </div>
   )
@@ -90,6 +97,3 @@ const NavigationPreview = ({ entry }) => {
 }
 
 CMS.registerPreviewTemplate('blog', BlogPreview)
-CMS.registerPreviewTemplate('product', ProductPreview)
-CMS.registerPreviewTemplate('home', HomePreview)
-CMS.registerPreviewTemplate('navigation', NavigationPreview)
