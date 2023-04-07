@@ -14,3 +14,13 @@
 
     .body
       = markdown product.body
+	  
+	.paypal-form
+		  - paypal_button = product.paypal_button
+		  form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+			input type="hidden" name="cmd" value="_xclick"
+			input type="hidden" name="business" value=paypal_button.paypal_email
+			input type="hidden" name="item_name" value=paypal_button.item_name
+			input type="hidden" name="amount" value=paypal_button.price
+			input type="hidden" name="currency_code" value=data.settings.units.currency || 'EUR'
+			input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" alt="PayPal - The safer, easier way to pay online">
