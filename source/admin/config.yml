@@ -6,7 +6,6 @@ public_folder: /images/uploads
 
 
 collections:
-  #yaml middleman data example
   - name: product
     label: Label
     format: yml
@@ -18,10 +17,14 @@ collections:
       - {label: Title, name: title, widget: string, required: true}
       - {label: Publish Date, name: date, widget: datetime}
       - {label: Image, name: image, widget: image, required: true}
-
       - {label: Lot , name: weight, widget: number}
       - {label: Current Price, name: price, widget: number}
       - {label: Body, name: body, widget: markdown}
+      - {label: PayPal Button, name: paypal_button, widget: object, fields: [
+          {label: Item Name, name: item_name, widget: string},
+          {label: Price, name: price, widget: number},
+          {label: PayPal Email, name: paypal_email, widget: string}
+        ]}
 
 #markdown middleman blog example
   - name: blog
