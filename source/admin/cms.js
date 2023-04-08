@@ -1,4 +1,4 @@
-const contentApi = require("netlify").createClient({ accessToken: process.env.ACCESS_TOKEN });
+const contentApi = require("netlify").createClient({ accessToken: process.env.l6aquQgPu8npxVmQoiZpSSfiY416PupNB4hr8iS7RtM });
 
 contentApi.on("login", () => {
   console.log("Logged in to Netlify CMS");
