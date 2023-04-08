@@ -16,20 +16,25 @@ contentApi.on("open", () => {
   console.log("Connection to Netlify CMS opened");
 });
 
-contentApi.on("create", (event) => {
+contentApi.on("create", handleProductUpdate);
+contentApi.on("update", handleProductUpdate);
+
+async function handleProductUpdate(event) {
   if (event.collectionName === "product") {
-    // Get the latest product entry
-    contentApi.listSiteFiles({ path: "/data/products" }).then((files) => {
-      const latestProduct = files
+    try {
+      const products = await contentApi.listSiteFiles({ path: "/data/products" });
+      const latestProduct = products
         .filter((file) => file.extension === "yml")
-        .sort((a, b) => new Date(b.mtime) - new Date(a.mtime))[0];
-      
-      // Update the "lot" field with the last inputted number + 1
+        .sort((a, b) => a.data.weight - b.data.weight)
+        .pop();
+
       const lot = latestProduct.data.weight + 1;
       const filePath = `/data/products/${latestProduct.name}`;
-      contentApi.updateSiteFile(filePath, { ...latestProduct.data, weight: lot });
-    });
+      await contentApi.updateSiteFile(filePath, { ...latestProduct.data, weight: lot });
+    } catch (error) {
+      console.error(`Error updating product: ${error.message}`);
+    }
   }
-});
+}
 
 module.exports = contentApi;
