@@ -6,6 +6,20 @@ public_folder: /images/uploads
 
 
 collections:
+  - name: buyitnow
+    label: Buy It Now
+    format: yml
+    extension: yml
+    folder: data/buyitnow/
+    create: true
+    slug: '{{title}}'
+    fields:
+      - {label: Title, name: title, widget: string, required: true}
+      - {label: Image, name: image, widget: image, required: true}
+      - {label: Description, name: description, widget: string}
+      - {label: Price, name: price, widget: number, required: true}
+      - {label: Paypal Button, name: paypal, widget: string, required: true}
+
   #yaml middleman data example
   - name: product
     label: Label

@@ -1,0 +1,12 @@
+section.buyitnow
+  .container
+    h2 Buy It Now Items
+    .row
+      - data.buyitnow.each do |(_filename, item)|
+        .col-md-4
+          .item
+            = image_tag(item.image)
+            h3 = item.title
+            p = item.description
+            p = '$' + item.price.to_s
+            = item.paypal.html_safe

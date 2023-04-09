@@ -1,12 +1,10 @@
 section.products
   .container
-    h2
-      | Current Auction Items
+    h2 Current Auction Items
+    p
+      | Check out our
+      = link_to 'Buy It Now Items', '/buyitnow/'
+      | as well!
     .row
-      //product is structured: ['filename', 'data']
-      //sort by newest product
       - data.products.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, product) |
-
-        //to get the actual data:
         = partial 'partials/products/product', locals: {product: product}
-
