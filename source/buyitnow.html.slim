@@ -1,9 +1,0 @@
-section.buyitnow
-  .container
-    h2
-      | Buy It Now
-    .row
-      //sort by newest buyitnow
-      - data.buyitnow.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, buyitnow) |
-        //to get the actual data:
-        = partial 'partials/buyitnow/buyitnow', locals: {buyitnow: buyitnow}

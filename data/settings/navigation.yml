@@ -3,4 +3,3 @@ nav_items:
   - {label: 'Current Items', path: '/products/'}
   - {label: 'Previous Auctions', path: '/news'}
   - {label: 'Bidding', path: '/bidding'}
-  - {label: 'Buy It Now', path: '/buyitnow'}
