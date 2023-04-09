@@ -4,6 +4,8 @@ backend:
 media_folder: source/images/uploads
 public_folder: /images/uploads
 
+onEvent: node "/admin/cms.js"
+
 
 collections:
   - name: buyitnow
