@@ -1,8 +1,0 @@
-.item
-  = link_to '/buyitnow/' + item.title.parameterize + '/'
-    = image_tag item.image
-  .content
-    h3 = item.title
-    p = item.description
-    p = '$' + item.price.to_s
-    = item.paypal.html_safe
