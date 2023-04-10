@@ -55,6 +55,15 @@ end
 # pretty urls
 activate :directory_indexes
 
+# Route for buyititems index
+proxy "/buyititems/index.html", "/buyititems.html"
+
+# Route for buyititems detail pages
+data.buyititems.each do |(_filename, item)|
+  proxy "/buyititems/#{item.title.parameterize}/index.html", "/buyititem.html", :locals => { :item => item }, :ignore => true
+end
+
+
 helpers do
   #helper to set background images with asset hashes in a style attribute
   def background_image(image)
