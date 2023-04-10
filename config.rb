@@ -55,11 +55,6 @@ end
 # pretty urls
 activate :directory_indexes
 
-data.buyitnow.each do |id, item|
-  proxy "/buyitnow/#{id}.html", "/buyitnow/_item.html", locals: { item: item }, ignore: true
-end
-
-
 helpers do
   #helper to set background images with asset hashes in a style attribute
   def background_image(image)
