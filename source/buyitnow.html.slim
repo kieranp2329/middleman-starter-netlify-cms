@@ -1,7 +1,0 @@
-section.buyitnow
-  .container
-    h2
-      | Buy It Now Items
-    .row
-      - data.buyitnow.each do | (_filename, item) |
-        = partial 'partials/buyitnow/item', locals: {item: item}

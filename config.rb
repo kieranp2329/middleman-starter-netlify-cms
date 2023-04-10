@@ -46,14 +46,7 @@ data.products.each do |_filename, product|
   ignore: true
 end
 
-# proxy buyitnow.yml files to buyitnow.html 
-data.buyitnow.each do |_filename, buyitnow|
-  # buyitnow is an array: [filename, {data}]
-  proxy "/buyitnow/#{buyitnow[:title].parameterize}/index.html", "buyitnow.html", 
-  locals: {buyitnow: buyitnow}, 
-  layout: 'buyitnow-detail',
-  ignore: true
-end
+
 
 # Helpers
 # Methods defined in the helpers block are available in templates
