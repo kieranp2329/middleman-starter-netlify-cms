@@ -8,20 +8,16 @@ onEvent: node "/admin/cms.js"
 
 
 collections:
-
-  - name: buyitnow
-    label: Buy It Now
-    format: yml
-    extension: yml
-    folder: data/buyitnow/
+  - name: "buyitnow"
+    label: "Buy It Now"
+    folder: "data/buyitnow"
     create: true
-    slug: '{{title}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Image, name: image, widget: image, required: true}
-      - {label: Description, name: description, widget: string}
-      - {label: Price, name: price, widget: number, required: true}
-      - {label: Paypal Button, name: paypal, widget: string, required: true}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "markdown" }
 
   #yaml middleman data example
   - name: product

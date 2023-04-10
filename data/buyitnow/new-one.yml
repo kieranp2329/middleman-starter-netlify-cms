@@ -1,0 +1,6 @@
+---
+title: Title of the item
+price: Price of the item
+image: Path to the image file (relative to the "source/images/uploads" folder)
+description: Description of the item
+---
