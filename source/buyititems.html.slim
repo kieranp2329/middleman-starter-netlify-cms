@@ -8,4 +8,4 @@ section.products
       - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
 
         //to get the actual data:
-        = partial 'partials/products/product', locals: {product: item}
+        = partial 'partials/products/buyit', locals: {product: item}
