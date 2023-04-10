@@ -8,19 +8,6 @@ onEvent: node "/admin/cms.js"
 
 
 collections:
-  - name: buyitnow
-    label: Buy It Now
-    format: yml
-    extension: yml
-    folder: data/buyitnow/
-    create: true
-    slug: '{{title}}'
-    fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Image, name: image, widget: image, required: true}
-      - {label: Description, name: description, widget: string}
-      - {label: Price, name: price, widget: number, required: true}
-      - {label: PayPal Button, name: paypal_button, widget: string, required: true}
 
   - name: buyitnow
     label: Buy It Now
