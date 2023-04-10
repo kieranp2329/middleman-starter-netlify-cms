@@ -1,0 +1,5 @@
+title: "Product Title"
+image: "/images/uploads/product-image.jpg"
+description: "Product description goes here"
+price: 10.00
+paypal_button: "<!-- PayPal Button Code Goes Here -->"
