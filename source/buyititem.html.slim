@@ -1,0 +1,16 @@
+.buyititem-detail
+  .image style=background_image(image_path(item.image))
+  .content
+    .meta
+      h1 = item.title
+
+      .weight
+        - weight = data.settings.units.weight || 'kg'
+        span = weight + item.weight.to_s
+
+      .price
+        - currency = data.settings.units.currency || '€' 
+        span = currency + item.price.to_s 
+
+    .body
+      = markdown item.body
