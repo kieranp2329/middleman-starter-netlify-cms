@@ -22,5 +22,32 @@ image: /images/uploads/presentation1.jpg
 16. F﻿urness Railway. Hellifield. £4.50
 17. G﻿reat North of Scotland Railway. Glasgow Central. £3
 18. G﻿reat North of Scotland Railway. Perth. Not Sold
-19.
-20.
+19. L﻿ondon, Brighton and South Coast Railway. Banstead to Brighton. Not Sold
+20. G﻿reat Western Railway. Inverkeithing NB, Via Bristol Mid, Settle, Carlisle, Hawick & Forth Bridge. £15
+21. I﻿sle of Wight Railway. Birmingham viw Stokes Bay, Basingstoke & Great Western Railway. Withdrawn.
+22. L﻿ondon Birghton and South Coast Railway. Rowfant to Cook's Bdge. £11
+23. G﻿reat Western Railway. Ryde Esplanade via Basingstoke. £4.50
+24. G﻿reat Easter Railway. Cowbit. £13
+25. L﻿ondon, Chatham and Dover Railway. Brixton. £3.50
+26. L﻿ondon Birghton and South Coast Railway, Guildford to Norbury. £3
+27. L﻿ondon Birghton and South Coast Railway. Newhaven Harbour to Ventnor ( Isle of Wight ). £5.50
+28. L﻿ondon Birghton and South Coast Railway. Victoria to Leatherhead. £8.50
+29. L﻿ondon Birghton and South Coast Railway. Yarmouth. £16
+30. L﻿ondon and North Easter Railway. Newcastle to Barry Docks. £8.50
+31. L﻿ondon and North Easter Railway. To Fakenham. £12
+32. L﻿ondon and North Easter Railway.  To Harwich. £12
+33. L﻿ondon and North Easter Railway. Edinburgh ( Waverly ) to Kilconquhar. £8.50
+34. L﻿ondon and North Easter Railway. York to Cheltenham. £2.50
+35. M﻿ersey Railway. Hadlow Road. £32
+36. L﻿ondon and North Western Railway. Wisbech. Not Sold
+37. L﻿ondon and North Western Railway. Millbrook. £2.50
+38. L﻿ & N W & G W RY. Bebington and / New Ferry. Not Sold
+39. L﻿ancashire and Yorkshire Railway. Grange. £3
+40. L﻿oundon and South Western Railway. Poole Junction. £29
+41. L﻿ondon and South Western Railway. Finchley Rd. £44
+42. L﻿ondon and South Western Railway. Egham. £38
+43. L﻿ondon and South Western Railway. Overton. £12
+44. L﻿ondon and South Western Railway. Bournemouth West to Clevedon vie Highbridge and G. W. Rly. £11
+45.
+46.
+47.
