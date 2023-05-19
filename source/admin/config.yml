@@ -54,6 +54,7 @@ collections:
       - {label: Description, name: description, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
+      - {label: Lot 1, name: lot1, widget: string}
 
   - name: pages
     label: Pages
