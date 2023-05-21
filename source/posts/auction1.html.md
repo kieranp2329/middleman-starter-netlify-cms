@@ -1,5 +1,5 @@
 ---
-title: Title
+title: May 2023 Auction
 date: 2023-05-21T15:08:23.899Z
 lotgroup:
   - lotnumber: 1
@@ -15,4 +15,4 @@ lotgroup:
     img: /images/uploads/cal-ro.jpg
     price: "100"
 ---
-A﻿uction
+A﻿uction 1
