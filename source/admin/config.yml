@@ -54,7 +54,7 @@ collections:
           - {label: Body, name: body, widget: markdown}
           - label: Lot
             name: lotgroup
-            widget: list
+            widget: object
             fields:
               - label: Lot Number
                 name: lotnumber
