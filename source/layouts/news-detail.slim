@@ -3,23 +3,14 @@
     .container
       .row
         .title
-          - date = Date.parse current_page.data.date.to_s
+          - date = Date.parse(current_page.data.date.to_s)
           span.date = date.strftime("%d-%m-%Y")
           h1 = current_page.data.title
 
-
       .row.content
 
-      .lot1
-      .row
-
-     <h1>List</h1>
-<ol>
-  <% current_page.data.lotgroup.each do |f| %>
-  <li><%= f %></li>
-  <% end %>
-</ol>
-
-
-        
-
+      - current_page.data.lotgroup.each do |lot|
+        .lot1
+          .row
+            h1 = lot["lotnumber"]
+            p = lot["description"]
