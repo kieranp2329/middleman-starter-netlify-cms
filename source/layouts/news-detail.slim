@@ -7,10 +7,10 @@
           span.date = date.strftime("%d-%m-%Y")
           h1 = current_page.data.title
 
-      .row.content
+      .products
 
       - current_page.data.lotgroup.each do |lot|
-        .lot1
-          .row
-            h1 = lot["lotnumber"]
+        .news-item
+          .product
+            h2 = lot["lotnumber"]
             p = lot["description"]
