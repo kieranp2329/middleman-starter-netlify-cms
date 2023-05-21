@@ -62,6 +62,9 @@ collections:
               - label: Description
                 name: description
                 widget: text
+              - label: Image
+                name: image
+                widget: image
 
 
   - name: page
