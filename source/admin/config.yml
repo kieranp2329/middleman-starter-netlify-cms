@@ -51,10 +51,13 @@ collections:
     fields:
       - {label: Title, name: title, widget: string, required: true}
       - {label: Publish Date, name: date, widget: datetime}
-      - {label: "Lot 1", name: lot1, widget: object, fields: [
-        {label: "Number", name: "lotnumber", widget: string},
-        {label: "description", name: "description", widget: "text"},
-        {label: Image, name: image, widget: image}]}
+      - label: Lot 1
+          name: lot1
+          widget: list
+          fields:
+            - {label: Number, name: lotnumber, widget: string}
+            - {label: Description, name: description, widget: text}
+            - {label: Image, name: imageUrl, widget: image}
 
 
   - name: pages
