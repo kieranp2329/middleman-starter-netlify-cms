@@ -4,10 +4,11 @@
       | .products {
       |   display: flex;
       |   flex-wrap: wrap;
+      |   justify-content: space-between;
       | }
       |
       | .product {
-      |   width: calc(30% - 20px);
+      |   width: calc(33.33% - 20px);
       |   margin: 10px;
       |   padding: 10px;
       |   border: none;
@@ -50,5 +51,5 @@
                 h3 = lot["description"]
               .price
                 p 
-                  - currency = data.settings.units.currency || '€' 
+                  - currency = Sold For: 
                   = currency + lot["price"].to_s
