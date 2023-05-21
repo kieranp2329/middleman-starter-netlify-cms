@@ -1,10 +1,10 @@
-.product(style='max-width: 100%;')
+.product(style='max-width: 100%; display: flex; flex-direction: column;')
   = link_to('/buyititems/' + product.title.parameterize + '/') do
     .product-image
       = image_tag(product.image)
-    .product-content
+    .product-content(style='flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;')
       .title
         h3 = product.title
-      .price(style='overflow: hidden; white-space: nowrap; text-overflow: ellipsis;')
+      .price(style='margin-top: auto;')
         - currency = data.settings.units.currency || '€'
         = currency + product.price.to_s
