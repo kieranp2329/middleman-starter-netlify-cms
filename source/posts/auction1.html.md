@@ -6,6 +6,4 @@ lotgroup:
     description: Lot One Description
     img: 
     price: 100
-
 ---
-B﻿ody
