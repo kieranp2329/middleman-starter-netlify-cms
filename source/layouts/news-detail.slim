@@ -13,10 +13,12 @@
 
       .row.content
 
-      .help
-        h2 =  current_page.data.lot1.description
+      .lot1
+        h1 =  current_page.data.lot1.lotnumber
         .image
         = image_tag current_page.data.lot1.image
+        h2 = current_page.data.lot.description
+
 
         
 
