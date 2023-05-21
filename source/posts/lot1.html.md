@@ -8,4 +8,8 @@ lotgrouper:
 lotnumber:
   - lotnumber: THIS IS LOT ONE
     description: THIS IS LOT ONE DESCRIPTION
+lotgroup:
+  - lotnumber: Lot Number
+    description: Lotting
 ---
+B﻿ody
