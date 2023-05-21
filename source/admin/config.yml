@@ -45,7 +45,7 @@ collections:
     label: Previous Auctions
     slug: '{{title}}'
     files:
-      - file: "source/posts/lot1.html.md"
+      - file: "source/posts/auction1.html.md"
         label: "Auction One"
         name: "lot1"
         fields:
