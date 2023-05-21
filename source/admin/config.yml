@@ -51,7 +51,7 @@ collections:
     fields:
       - {label: Title, name: title, widget: string, required: true}
       - {label: Publish Date, name: date, widget: datetime}
-      - {label: "Lot 1", name: lot1, widget: string, create: true, fields: [
+      - {label: "Lot 1", name: lot1, widget: string, fields: [
         {label: "Number", name: "lotnumber1", widget: string},
         {label: Description, name: description, widget: string}
         {label: Image, name: image, widget: image}]}
