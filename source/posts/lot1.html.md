@@ -5,7 +5,7 @@ lot1:
   lotnumber: lotone
   description: description
   image: /images/uploads/presentation1.jpg
-lotnumber:
+tickets:
   - lotnumber: "1"
     description: Description
 ---
