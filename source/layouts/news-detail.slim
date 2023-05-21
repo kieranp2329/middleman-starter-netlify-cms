@@ -11,8 +11,7 @@
       .row.content
 
       .lot1
-        h1 =  current_page.data.lot1.tickets group_by {|a| a.date.year }.each do |year, articles|
-        current_page.data.lot1.tickets group_by {|a| a.date.year }.each do |year, articles|
+        h1 =  current_page.data.lotnumber.lotnumber
         .image
         = image_tag current_page.data.lot1.image
 
