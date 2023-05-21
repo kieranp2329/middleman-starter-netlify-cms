@@ -37,19 +37,18 @@
           h1 = current_page.data.title
 
       .products
-
-      - current_page.data.lotgroup.each do |lot|
-        .product
-          .product-content
-            .title
-              h2
-                u = lot["lotnumber"]
-          .product-image
-            img(src=lot["img"], style="max-width: 100%; height: auto;")
-          .product-content
-            .description
-              h3 = lot["description"]
-            .price
-              p 
-                - currency = data.settings.units.currency || '€' 
-                = currency + lot["price"].to_s
+        - current_page.data.lotgroup.each do |lot|
+          .product
+            .product-content
+              .title
+                h2
+                  u = lot["lotnumber"]
+            .product-image
+              img src=lot["img"]
+            .product-content
+              .description
+                h3 = lot["description"]
+              .price
+                p 
+                  - currency = data.settings.units.currency || '€' 
+                  = currency + lot["price"].to_s
