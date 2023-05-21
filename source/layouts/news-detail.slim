@@ -40,11 +40,13 @@
 
       - current_page.data.lotgroup.each do |lot|
         .product
+          .product-content
+            .title
+              h2
+                u = lot["lotnumber"]
           .product-image
             img src=lot["img"]
           .product-content
-            .title
-              h2 = lot["lotnumber"]
             .description
               h3 = lot["description"]
             .price
