@@ -203,5 +203,197 @@ lotgroup:
     description: North British Railway. Gartcosh Junction.
     img:
     price: 3
+  - lotnumber: 51
+    description: Midland Railway. Doe Hill.
+    img:
+    price: 3.50
+  - lotnumber: 52
+    description: Midland Railway. East Ham.
+    img:
+    price: 7.50
+  - lotnumber: 53
+    description: Midland Railway. Langwathby.
+    img:
+    price: 2
+  - lotnumber: 54
+    description: Midland Railway. Manchester ( Victoria ).
+    img:
+    price: 2
+  - lotnumber: 55
+    description: Midland Railway. Salisbury.
+    img:
+    price: 3.50
+  - lotnumber: 56
+    description: Midland Railway. Wakefield ( Westgate ).
+    img:
+    price: 2.50
+  - lotnumber: 57
+    description: Midland Railway. Woodchester.
+    img:
+    price: 4.50
+  - lotnumber: 58
+    description: Midland Railway. Yarmouth via Peterborough & G.E.R.
+    img:
+    price: 3.50
+  - lotnumber: 59
+    description: London, Chatham and Dover Railway.
+    img:
+    price: 32
+  - lotnumber: 60
+    description: North Staffordshire Railway. Burton-on-Trent.
+    img:
+    price: 4
+  - lotnumber: 61
+    description: Norfolk and Suffolk Joint. Via G.W.
+    img:
+    price: 22
+  - lotnumber: 62
+    description: Midland and South Western Junction Railway. Leicester.
+    img:
+    price: 3
+  - lotnumber: 63
+    description: Rhondda and Swansea Bay Railway. Maesteg.
+    img:
+    price: Not Sold
+  - lotnumber: 64
+    description: North Staffordshire Railway. Cresswell.
+    img:
+    price: 7.50
+  - lotnumber: 65
+    description: North Eastern Railway. Alston.
+    img:
+    price: 3.50
+  - lotnumber: 66
+    description: North Eastern Railway. Brandon Colliery.
+    img:
+    price: 6.50
+  - lotnumber: 67
+    description: North Eastern Railway. Byers Green.
+    img:
+    price: 2.50
+  - lotnumber: 68
+    description: North Eastern Railway. Corbridge.
+    img:
+    price: 2
+  - lotnumber: 69
+    description: North Staffordshire Railway. Chesterfield.
+    img:
+    price: 3.50
+  - lotnumber: 70
+    description: North Eastern Railway. Glasgow N.B. Queen Street.
+    img:
+    price: 4.50
+  - lotnumber: 71
+    description: North Eastern Railway. Middleton on The Wolds.
+    img:
+    price: 9.50
+  - lotnumber: 72
+    description: North Eastern Railway. Seahouses.
+    img:
+    price: 5.50
+  - lotnumber: 73
+    description: North Eastern Railway Stockport.
+    img:
+    price: 5.50
+  - lotnumber: 74
+    description: Wilson Line. Aalesund.
+    img:
+    price: 5
+  - lotnumber: 75
+    description: Severn and Wye Joint Railway / G.W. & Mid. Lydney Town.
+    img:
+    price: 13
+  - lotnumber: 76
+    description: Norfolk and Suffolk Joint Railways Committee. Dereham.
+    img:
+    price: 9.50
+  - lotnumber: 77
+    description: Midland Railway. Worksop.
+    img:
+    price: 2
+  - lotnumber: 78
+    description: Rhymney Railway Company. Barnmouth, Cam.
+    img:
+    price: 34
+  - lotnumber: 79
+    description: Taff Vale Railway. Trehafo to Cowbridge.
+    img:
+    price: Not Sold
+  - lotnumber: 80
+    description: South Eastern and Chatham Railway. Kingswood and Burch Heath.
+    img:
+    price: 4
+  - lotnumber: 81
+    description: South Eastern and Chatham Railway. Charing Cross to Sturry.
+    img:
+    price: 4
+  - lotnumber: 82
+    description: South Eastern and Chatham Railway. Paddock Wd.
+    img:
+    price: 4
+  - lotnumber: 83
+    description: Seacombe, Hoylake and Deeside Railway. Hamilton Sq.
+    img:
+    price: 38
+  - lotnumber: 84
+    description: South Eastern and Chatham Railway. St Leonards via Hastings.
+    img:
+    price: 8.50
+  - lotnumber: 85
+    description: South West and Mid Railway Companies. (S & DJR). Tiverton G.W Via Highbridge.
+    img:
+    price: 16
+  - lotnumber: 86
+    description: South West and Mid Railway Companies. (S & DJR). Weston-Super-Mare Via Highbridge.
+    img:
+    price: 8
+  - lotnumber: 87
+    description: South West and Mid Railway Companies. (S & DJR). Well Hall (S. E & C.). Via Templecoombe.
+    img:
+    price: 38
+  - lotnumber: 88
+    description: South Devon Railway. Cornwood to Bath.
+    img:
+    price: 52
+  - lotnumber: 89
+    description: South West and Mid Railway Companies. (S & DJR). Aldershot Via Templecoombe.
+    img:
+    price: 15
+  - lotnumber: 90
+    description: South West and Mid Railway Companies. (S & DJR). Bristol (G. W.) Via Highbridge.
+    img:
+    price: 15
+  - lotnumber: 91
+    description: South West and Mid Railway Companies. (S & DJR). Cardiff (G. W.) Via Highbridge.
+    img:
+    price: 11
+  - lotnumber: 92
+    description: West Cornwall Railway. Torquay.
+    img:
+    price: 8.50
+  - lotnumber: 93
+    description: Southern Railway. Waterloo Chertsey.
+    img:
+    price: 2.50
+  - lotnumber: 94
+    description: Southern Railway. Waterloo to Chertsey.
+    img:
+    price: 1.50
+  - lotnumber: 95
+    description: Southern Railway. Chilworth.
+    img:
+    price: 9.50
+  - lotnumber: 96
+    description: Southern Railway. Edgware Road.
+    img:
+    price: 3.50
+  - lotnumber: 97
+    description: Southern Railway. Guildford.
+    img:
+    price: 2.50
+  - lotnumber: 98
+    description: Southern Railway. Waterloo to Bournemouth.
+    img:
+    price: 7.50
 ---
 
