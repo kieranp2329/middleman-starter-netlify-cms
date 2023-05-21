@@ -1,8 +1,5 @@
 ---
-title: 25th April 2023
-date: 2023-04-25T16:06:32.604Z
-lotgrouper:
-  lotgroup: lotone
+lotgroup: lotone
 lotnumber:
   - lotnumber: THIS IS LOT ONE
     description: THIS IS LOT ONE DESCRIPTION
