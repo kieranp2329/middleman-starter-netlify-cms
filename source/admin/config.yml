@@ -65,7 +65,7 @@ collections:
         
 
 
-  - name: pages
+  - name: page
     label: Pages
     files:
       - file: "data/pages/home.yml"
