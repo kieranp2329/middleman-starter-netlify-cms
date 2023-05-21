@@ -58,7 +58,7 @@ collections:
             fields:
               - label: Lot Number
                 name: lotnumber
-                widget: string
+                widget: text
               - label: Description
                 name: description
                 widget: text
