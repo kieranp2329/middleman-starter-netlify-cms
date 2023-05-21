@@ -10,5 +10,9 @@ lotgroup:
     description: Mint
     img: /images/uploads/b-e-ba.jpg
     price: "100"
+  - lotnumber: 3
+    description: Mint Condition
+    img: /images/uploads/cal-ro.jpg
+    price: "100"
 ---
 A﻿uction
