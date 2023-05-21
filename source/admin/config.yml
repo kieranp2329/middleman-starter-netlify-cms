@@ -46,8 +46,8 @@ collections:
     slug: '{{title}}'
     files:
       - file: "site/content/contact/lot1.html.md"
-        label: "Contact Page"
-        name: "contact"
+        label: "Auction One"
+        name: "lot1"
         fields:
           - {label: Title, name: title, widget: string, required: true}
           - {label: Publish Date, name: date, widget: datetime}
