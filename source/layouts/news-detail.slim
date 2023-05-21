@@ -3,15 +3,16 @@
     .container
       .row
         .title
-
-
-          h1 = 
+          - date = Date.parse current_page.data.date.to_s
+          span.date = date.strftime("%d-%m-%Y")
+          h1 = current_page.data.title
 
 
       .row.content
 
       .lot1
-        h1 = 
+        h1 = current_page.data.lotgroup.lotnumber
+
 
         
 
