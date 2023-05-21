@@ -53,7 +53,9 @@ collections:
       - {label: Publish Date, name: date, widget: datetime}
       - {label: Description, name: description, widget: string}
       - {label: Image, name: image, widget: image}
-      - {label: Lot 1, name: lot1, widget: string}
+      - {label: "Lot 1", name: lot1, widget: object, fields: [
+        {label: "Number", name: "lotnumber1", widget: string},
+        {label: "Description", name: "description", widget: "text"}]}
 
 
   - name: pages
