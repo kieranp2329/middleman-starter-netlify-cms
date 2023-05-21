@@ -47,13 +47,13 @@ collections:
     files:
       - file: "source/posts/lot1.html.md"
         label: "Auction One"
-        name: "lot1"
+        name: "lotgrouper"
         fields:
           - {label: Title, name: title, widget: string, required: true}
           - {label: Publish Date, name: date, widget: datetime}
           - {label: Body, name: body, widget: markdown}
           - label: Lot
-            name: lotnumber
+            name: lotgroup
             widget: list
             fields:
               - label: Lot Number
