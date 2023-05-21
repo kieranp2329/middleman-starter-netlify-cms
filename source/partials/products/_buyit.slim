@@ -1,12 +1,11 @@
-//link to product by converting the title to a slug
-.product
-  = link_to '/buyititems/' + product.title.parameterize + '/'
-    .product-image
-      = image_tag product.image
+.product(style='max-width: 300px; border: 1px solid #ccc; padding: 10px;')
+  = link_to('/buyititems/' + product.title.parameterize + '/') do
+    .product-image(style='max-width: 100%;')
+      = image_tag(product.image)
     .product-content
       .title
-        h3 = product.title
+        h3(style='margin: 0; font-size: 18px;') = product.title
       .price
-        p 
-          - currency = data.settings.units.currency || '€' 
-          = currency + product.price.to_s 
+        p(style='margin: 0; font-size: 14px;')
+          - currency = data.settings.units.currency || '€'
+          = currency + product.price.to_s
