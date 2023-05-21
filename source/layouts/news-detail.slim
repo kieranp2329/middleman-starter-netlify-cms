@@ -16,13 +16,13 @@
       |   box-sizing: border-box;
       | }
       |
-      | @media (max-width: 30%) {
+      | @media (max-width: 768px) {
       |   .product {
       |     width: calc(50% - 20px);
       |   }
       | }
       |
-      | @media (max-width: 30%) {
+      | @media (max-width: 480px) {
       |   .product {
       |     width: 100%;
       |   }
@@ -45,7 +45,7 @@
               h2
                 u = lot["lotnumber"]
           .product-image
-            img src=lot["img"]
+            img src=lot["img"], style="max-width: 100%; height: auto;"
           .product-content
             .description
               h3 = lot["description"]
