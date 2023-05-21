@@ -7,7 +7,7 @@
       | }
       |
       | .product {
-      |   width: calc(33.33% - 20px);
+      |   width: calc(33% - 20px);
       |   margin: 10px;
       |   padding: 10px;
       |   border: none;
@@ -27,7 +27,7 @@
       |     width: 100%;
       |   }
       | }
-  
+
   .news-detail
     .container
       .row
@@ -35,7 +35,7 @@
           - date = Date.parse(current_page.data.date.to_s)
           span.date = date.strftime("%d-%m-%Y")
           h1 = current_page.data.title
-  
+
       .products
         - current_page.data.lotgroup.each do |lot|
           .product
@@ -44,9 +44,7 @@
                 h2
                   u = lot["lotnumber"]
             .product-image
-              a(href=lot["img"], target="_blank")
-                img(src=lot["img"])
-  
+              img src=lot["img"]
             .product-content
               .description
                 h3 = lot["description"]
