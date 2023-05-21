@@ -1,4 +1,20 @@
 = wrap_layout :layout
+  head
+    style
+      | .products {
+      |   display: flex;
+      |   flex-wrap: wrap;
+      | }
+      |
+      | .product {
+      |   width: calc(33.33% - 20px);
+      |   margin: 10px;
+      |   padding: 10px;
+      |   border: none;
+      |   background-color: #f9f9f9;
+      |   border-radius: 5px;
+      | }
+
   .news-detail
     .container
       .row
@@ -15,10 +31,10 @@
             img src=lot["img"]
           .product-content
             .title
-            h2 = lot["lotnumber"]
-          .description
-            h3 = lot["description"]
-          .price
-            p 
-              - currency = data.settings.units.currency || '€' 
-              = currency + lot["price"].to_s 
+              h2 = lot["lotnumber"]
+            .description
+              h3 = lot["description"]
+            .price
+              p 
+                - currency = data.settings.units.currency || '€' 
+                = currency + lot["price"].to_s
