@@ -27,39 +27,7 @@
       |     width: 100%;
       |   }
       | }
-      |
-      | .lightbox-link {
-      |   cursor: pointer;
-      | }
-      
-      | .lightbox-image {
-      |   display: none;
-      | }
-
-      | .lightbox-image.show {
-      |   display: block;
-      |   position: fixed;
-      |   top: 0;
-      |   left: 0;
-      |   width: 100%;
-      |   height: 100%;
-      |   background-color: rgba(0, 0, 0, 0.8);
-      |   z-index: 9999;
-      | }
-
-      | .lightbox-image img {
-      |   max-width: 90%;
-      |   max-height: 90%;
-      |   position: absolute;
-      |   top: 50%;
-      |   left: 50%;
-      |   transform: translate(-50%, -50%);
-      | }
-
-      | .lightbox-image.close {
-      |   display: none;
-      | }
-
+  
   .news-detail
     .container
       .row
@@ -67,7 +35,7 @@
           - date = Date.parse(current_page.data.date.to_s)
           span.date = date.strftime("%d-%m-%Y")
           h1 = current_page.data.title
-
+  
       .products
         - current_page.data.lotgroup.each do |lot|
           .product
@@ -76,12 +44,9 @@
                 h2
                   u = lot["lotnumber"]
             .product-image
-              a.lightbox-link(href=lot["img"])
+              a(href=lot["img"], target="_blank")
                 img(src=lot["img"])
-                .lightbox-image
-                  img(src=lot["img"], alt="Image", class="lightbox")
-                  span.close(class="lightbox close")
-
+  
             .product-content
               .description
                 h3 = lot["description"]
@@ -89,22 +54,3 @@
                 p 
                   - currency = data.settings.units.currency || '€' 
                   = currency + lot["price"].to_s
-
-  script.
-    document.addEventListener('DOMContentLoaded', function () {
-      var lightboxLinks = document.querySelectorAll('.lightbox-link');
-      var lightboxImages = document.querySelectorAll('.lightbox-image');
-
-      lightboxLinks.forEach(function (link, index) {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-          lightboxImages[index].classList.add('show');
-        });
-      });
-
-      lightboxImages.forEach(function (image) {
-        image.addEventListener('click', function () {
-          this.classList.remove('show');
-        });
-      });
-    });
