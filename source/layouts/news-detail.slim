@@ -12,7 +12,13 @@
 
       .lot1
       .row
-     h1 = current_page.data.lotgroup_list
+
+     <h1>List</h1>
+<ol>
+  <% current_page.data.lotgroup.each do |f| %>
+  <li><%= f %></li>
+  <% end %>
+</ol>
 
 
         
