@@ -58,13 +58,16 @@ collections:
             fields:
               - label: Lot Number
                 name: lotnumber
-                widget: text
+                widget: number
               - label: Description
                 name: description
                 widget: text
               - label: Image
-                name: image
+                name: img
                 widget: image
+              - label: Sold For
+                name: price
+                widget: string
 
 
   - name: page

@@ -5,6 +5,7 @@ lotgroup:
   - lotnumber: Lot Number One
     description: Lot One Description
     img: 
+    price: 100
 
 ---
 B﻿ody

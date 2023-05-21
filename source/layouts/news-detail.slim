@@ -15,12 +15,10 @@
             img src=lot["img"]
           .product-content
             .title
-              h2 = lot["lotnumber"]
-            .price
-              p 
-                - currency = data.settings.units.currency || '€' 
-                = currency + lot["price"].to_s 
-            .weight
-              p 
-                - weight = data.settings.units.weight || 'kg'
-                = weight + lot["weight"].to_s
+              h2 = Lot: lot["lotnumber"]
+             .description
+              h3 = lot["description"] 
+              .price
+                p 
+                  - currency = data.settings.units.currency || '€' 
+                  = currency + lot["price"].to_s 
