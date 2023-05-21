@@ -52,8 +52,8 @@ collections:
           - {label: Title, name: title, widget: string, required: true}
           - {label: Publish Date, name: date, widget: datetime}
           - {label: Body, name: body, widget: markdown}
-          - label: Ticket
-            name: ticket
+          - label: Lot
+            name: lotnumber
             widget: list
             fields:
               - label: Lot Number
