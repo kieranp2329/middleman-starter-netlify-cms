@@ -373,7 +373,7 @@ table tr td
       const formData = new FormData(form);
 
       try {
-        const response = await fetch('/.netlify/functions/submitForm2', {
+        const response = await fetch('/.netlify/functions/submitForm', {
           method: 'POST',
           body: JSON.stringify(Object.fromEntries(formData)),
         });
