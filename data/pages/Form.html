@@ -3,7 +3,7 @@
 <form name="Lotting">
   <div class="form_settings">
     <p><span>Name</span><input class="contact" type="text" name="your_name" value="" placeholder="John Doe"/></p>
-    <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" placeholder="example@example.com" /></p>
+    <p><span>Emil Address</span><input class="contact" type="text" name="your_email" value="" placeholder="example@example.com" /></p>
     <p><span>Phone Number</span><input class="contact" type="text" name="Phone_number" value="" placeholder="+44 1234567890"/></p>
     <p><span>Bid Amount</span><input type="text" name="bid_amount" id="currency-field" value="" data-type="currency" placeholder="99.99"></p>
     <p><span>Lot Number</span><input name="lot_number" class="contact" type="number" min="1" max="200" id="numberSize" oninput="(!validity.rangeOverflow||(value=200)) && (!validity.rangeUnderflow||(value=1)) && (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="1-80"/></p>
@@ -20,7 +20,7 @@
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('/.netlify/functions/submitForm', {
+      const response = await fetch('/.netlify/functions/submitForm2', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
       });
