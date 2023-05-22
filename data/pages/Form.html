@@ -20,7 +20,7 @@
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('/.netlify/functions/your-function-name', {
+      const response = await fetch('/.netlify/functions/submitForm', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
       });
