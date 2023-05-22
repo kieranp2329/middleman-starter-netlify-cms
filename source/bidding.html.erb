@@ -352,48 +352,52 @@ table tr td
       <center><div id="content">
         <!-- insert the page content here -->
         <h1>Submit an offer for auction</h1>
-        <p>Please put your name, contact details, and bidding offer below.</p>
-        <form name="Lotting">
-          <div class="form_settings">
-            <p><span>Name</span><input class="contact" type="text" name="your_name" value="" placeholder="John Doe"/></p>
-            <p><span>Emil Address</span><input class="contact" type="text" name="your_email" value="" placeholder="example@example.com" /></p>
-            <p><span>Phone Number</span><input class="contact" type="text" name="Phone_number" value="" placeholder="+44 1234567890"/></p>
-            <p><span>Bid Amount</span><input type="text" name="bid_amount" id="currency-field" value="" data-type="currency" placeholder="99.99"></p>
-            <p><span>Lot Number</span><input name="lot_number" class="contact" type="number" min="1" max="200" id="numberSize" oninput="(!validity.rangeOverflow||(value=200)) && (!validity.rangeUnderflow||(value=1)) && (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="1-80"/></p>
-            <p style="padding-top: 15px"><span>&nbsp;</span><button class="submit" type="submit">Submit</button></p>
-          </div>
-        </form>
-        
-        <script>
-          // Function to handle form submission
-          const submitForm = async (event) => {
-            event.preventDefault(); // Prevent the default form submission
-        
-            const form = document.forms.Lotting;
-            const formData = new FormData(form);
-        
-            try {
-              const response = await fetch('/.netlify/functions/submitForm2', {
-                method: 'POST',
-                body: JSON.stringify(Object.fromEntries(formData)),
-              });
-        
-              if (response.ok) {
-                const result = await response.json();
-                console.log(result); // Log the response from the function
-                // Do any additional processing or display success message
-              } else {
-                throw new Error('Failed to submit form');
-              }
-            } catch (error) {
-              console.error(error);
-              // Handle and display error message
-            }
-          };
-        
-          // Attach submitForm function to the form's submit event
-          document.forms.Lotting.addEventListener('submit', submitForm);
-        </script>
+  <p>Please put your name, contact details, and bidding offer below.</p>
+  <form name="Lotting" netlify>
+    <div class="form_settings">
+      <p><span>Name</span><input class="contact" type="text" name="your_name" value="" placeholder="John Doe"/></p>
+      <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" placeholder="example@example.com" /></p>
+      <p><span>Phone Number</span><input class="contact" type="text" name="Phone_number" value="" placeholder="+44 1234567890"/></p>
+      <p><span>Bid Amount</span><input type="text" name="bid_amount" id="currency-field" value="" data-type="currency" placeholder="99.99"></p>
+      <p><span>Lot Number</span><input name="lot_number" class="contact" type="number" min="1" max="200" id="numberSize" oninput="(!validity.rangeOverflow||(value=200)) && (!validity.rangeUnderflow||(value=1)) && (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="1-80"/></p>
+      <p style="padding-top: 15px"><span>&nbsp;</span><button class="submit" type="submit">Submit</button></p>
+    </div>
+  </form>
+
+  <script>
+    // Function to handle form submission
+    const submitForm = async (event) => {
+      event.preventDefault(); // Prevent the default form submission
+
+      const form = document.forms.Lotting;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/.netlify/functions/submitForm', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(formData)),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result); // Log the response from the function
+
+          // Show the popup message
+          alert(result.popupMessage);
+
+          // Do any additional processing or display success message
+        } else {
+          throw new Error('Failed to submit form');
+        }
+      } catch (error) {
+        console.error(error);
+        // Handle and display error message
+      }
+    };
+
+    // Attach submitForm function to the forms submit event
+    document.forms.Lotting.addEventListener('submit', submitForm);
+  </script>
 			  <br>
 		  
       </div>
