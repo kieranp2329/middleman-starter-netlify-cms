@@ -364,7 +364,40 @@ table tr td
     </div>
   </form>
 
+  <script>
+    // Function to handle form submission
+    const submitForm = async (event) => {
+      event.preventDefault(); // Prevent the default form submission
 
+      const form = document.forms.Lotting;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/.netlify/functions/submitForm2', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(formData)),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result); // Log the response from the function
+
+          // Show the popup message
+          alert(result.popupMessage);
+
+          // Do any additional processing or display success message
+        } else {
+          throw new Error('Failed to submit form');
+        }
+      } catch (error) {
+        console.error(error);
+        // Handle and display error message
+      }
+    };
+
+    // Attach submitForm function to the forms submit event
+    document.forms.Lotting.addEventListener('submit', submitForm);
+  </script>
 			  <br>
 		  
       </div>
