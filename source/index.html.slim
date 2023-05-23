@@ -2,10 +2,33 @@
 title: Somerset Railwayana
 ---
 
-section.hero style=background_image(image_path(data.pages.home.hero.image))
+section.hero style="background-image: url(#{image_path(data.pages.home.hero.images[0].image)})"
+  .carousel
+    - data.pages.home.hero.images.each do |image|
+      img src=image.image alt=''
   .caption
     .row
       h1 = p = data.pages.home.hero.title
+
+script.
+  | $(document).ready(function() {
+  |   var images = $('.carousel img');
+  |   var currentIndex = 0;
+
+  |   function fadeToNextImage() {
+  |     var nextIndex = (currentIndex + 1) % images.length;
+  |     var currentImage = images.eq(currentIndex);
+  |     var nextImage = images.eq(nextIndex);
+
+  |     currentImage.fadeOut(1000);
+  |     nextImage.fadeIn(1000);
+
+  |     currentIndex = nextIndex;
+  |   }
+
+  |   setInterval(fadeToNextImage, 2000);
+  | });
+
 	  
 
 section.homepage-story
