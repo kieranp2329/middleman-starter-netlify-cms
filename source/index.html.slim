@@ -2,31 +2,17 @@
 title: Somerset Railwayana
 ---
 
-section.hero
-  .carousel
-    - data.pages.home.hero.images.each do |image|
-      img src=image.image alt=''
+section.hero style="background-image: url(#{image_path(data.pages.home.hero.images[0].image)});"
   .caption
     .row
       h1 = p = data.pages.home.hero.title
 
 style type="text/css".
-  | .carousel {
-  |   position: relative;
-  |   height: 100%;
-  |   overflow: hidden;
-  | }
-  |
-  | .carousel img {
-  |   position: absolute;
-  |   top: 0;
-  |   left: 0;
-  |   opacity: 0;
-  |   transition: opacity 1s ease-in-out;
-  | }
-  |
-  | .carousel img:first-child {
-  |   opacity: 1;
+  | section.hero {
+  |   height: 100vh;
+  |   background-size: cover;
+  |   background-position: center;
+  |   transition: background-image 1s ease-in-out;
   | }
   |
   | @keyframes slideshow {
@@ -37,9 +23,8 @@ style type="text/css".
   | }
   |
   | .carousel img {
-  |   animation: slideshow 9s infinite;
+  |   display: none;
   | }
-
 
 	  
 
@@ -69,4 +54,3 @@ section.homepage-news.news
       //get the first two most recent posts
       - blog.articles.first(2).each do | article |
         = partial 'partials/news/news_item', locals: {article: article}
-
