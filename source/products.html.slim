@@ -2,28 +2,11 @@ section.products
   .container
     h2
       | Current Auction Items
-    input#search-bar(type="text" placeholder="Search...")
     .row
-      - data.products.sort_by { |_filename, product| product.date }.each do |(_filename, product)|
-        .product
-          = partial 'partials/products/product', locals: { product: product }
+      //product is structured: ['filename', 'data']
+      //sort by newest product
+      - data.products.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, product) |
 
-script.
-  document.addEventListener('DOMContentLoaded', function() {
-    var searchBar = document.getElementById('search-bar');
-    var products = document.querySelectorAll('.product');
+        //to get the actual data:
+        = partial 'partials/products/product', locals: {product: product}
 
-    searchBar.addEventListener('input', function() {
-      var searchQuery = searchBar.value.trim().toLowerCase();
-
-      products.forEach(function(product) {
-        var productName = product.textContent.toLowerCase();
-
-        if (productName.includes(searchQuery)) {
-          product.style.display = 'block';
-        } else {
-          product.style.display = 'none';
-        }
-      });
-    });
-  });
