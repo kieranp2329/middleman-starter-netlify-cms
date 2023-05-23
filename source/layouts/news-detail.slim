@@ -45,7 +45,7 @@
                 h2
                   u = lot["lotnumber"]
             .product-image
-              img src=lot["img"]
+              img src=(lot["img"].nil? ? "/images/uploads/noming.jpg" : lot["img"])
             .product-content
               .description
                 h3 = lot["description"]
