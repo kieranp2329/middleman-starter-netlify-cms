@@ -3,28 +3,25 @@ title: Somerset Railwayana
 ---
 
 section.hero style="background-image: url(#{image_path(data.pages.home.hero.images[0].image)});"
+  .carousel
+    - data.pages.home.hero.images.each do |image|
+      img src=image.image alt=''
   .caption
     .row
       h1 = p = data.pages.home.hero.title
 
-style type="text/css".
-  | section.hero {
-  |   height: 100vh;
-  |   background-size: cover;
-  |   background-position: center;
-  |   transition: background-image 1s ease-in-out;
+script type="text/javascript".
+  | var images = #{data.pages.home.hero.images.to_json};
+  | var currentIndex = 0;
+  |
+  | function rotateBackgroundImage() {
+  |   currentIndex = (currentIndex + 1) % images.length;
+  |   var imageUrl = images[currentIndex].image;
+  |   $('section.hero').css('background-image', 'url(' + imageUrl + ')');
   | }
   |
-  | @keyframes slideshow {
-  |   0% { opacity: 0; }
-  |   20% { opacity: 1; }
-  |   80% { opacity: 1; }
-  |   100% { opacity: 0; }
-  | }
-  |
-  | .carousel img {
-  |   display: none;
-  | }
+  | setInterval(rotateBackgroundImage, 3000);
+
 
 	  
 
