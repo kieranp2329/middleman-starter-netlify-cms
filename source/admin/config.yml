@@ -6,7 +6,6 @@ public_folder: /images/uploads
 
 onEvent: node "/admin/cms.js"
 
-
 collections:
   - name: buyititems
     label: Buy It Items
@@ -16,14 +15,24 @@ collections:
     create: true
     slug: '{{title}}'
     fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Image, name: image, widget: image, required: true}
-      - {label: Price, name: price, widget: number}
-      - {label: Body, name: body, widget: markdown}
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Image
+        name: image
+        widget: image
+        required: true
+      - label: Price
+        name: price
+        widget: number
+      - label: Body
+        name: body
+        widget: markdown
 
-
-  #yaml middleman data example
   - name: product
     label: Label
     format: yml
@@ -32,15 +41,30 @@ collections:
     create: true
     slug: '{{title}}'
     fields:
-      - {label: Title, name: title, widget: string, required: true}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Image, name: image, widget: image, required: true}
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Images
+        name: image
+        widget: list
+        fields:
+          - label: Image
+            name: image
+            widget: image
+      - label: Lot
+        name: weight
+        widget: number
+      - label: Current Price
+        name: price
+        widget: number
+      - label: Body
+        name: body
+        widget: markdown
 
-      - {label: Lot , name: weight, widget: number}
-      - {label: Current Price, name: price, widget: number}
-      - {label: Body, name: body, widget: markdown}
-
-#markdown middleman blog example
   - name: blog
     label: Previous Auctions
     slug: '{{title}}'
@@ -50,9 +74,16 @@ collections:
         label: "Auction One"
         name: "lot1"
         fields:
-          - {label: Title, name: title, widget: string, required: true}
-          - {label: Publish Date, name: date, widget: datetime}
-          - {label: Body, name: body, widget: markdown}
+          - label: Title
+            name: title
+            widget: string
+            required: true
+          - label: Publish Date
+            name: date
+            widget: datetime
+          - label: Body
+            name: body
+            widget: markdown
           - label: Lot
             name: lotgroup
             widget: list
@@ -63,14 +94,17 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: Image
-                name: img
-                widget: image
-                required: false
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    required: false
               - label: Sold For
                 name: price
                 widget: string
-
 
   - name: page
     label: Pages
@@ -83,8 +117,16 @@ collections:
             name: hero
             widget: object
             fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
+              - label: Title
+                name: title
+                widget: string
+              - label: Images
+                name: image
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
           - label: Story
             name: story
             widget: markdown
