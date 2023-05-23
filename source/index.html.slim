@@ -38,3 +38,33 @@ section.homepage-news.news
       //get the first two most recent posts
       - blog.articles.first(2).each do | article |
         = partial 'partials/news/news_item', locals: {article: article}
+
+style.
+  .carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .carousel img:first-child {
+    opacity: 1;
+  }
+
+  @keyframes slideshow {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .carousel img {
+    animation: slideshow 9s infinite;
+  }
