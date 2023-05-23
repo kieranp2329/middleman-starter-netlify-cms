@@ -1,4 +1,7 @@
 hero:
   image: /images/uploads/homepage-hero.jpg
   title: Somerset Railwayana
+  images:
+    - image: /images/uploads/b-e-ba.jpg
+    - image: /images/uploads/br-il.jpg
 story: "> # **`Site Under Construction`**"
