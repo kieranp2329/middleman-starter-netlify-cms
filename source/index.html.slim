@@ -10,7 +10,7 @@ section.hero style="background-image: url(#{image_path(data.pages.home.hero.imag
     .row
       h1 = p = data.pages.home.hero.title
 
-script.
+script src="https://code.jquery.com/jquery-3.6.0.min.js".
   | $(document).ready(function() {
   |   var images = $('.carousel img');
   |   var currentIndex = 0;
