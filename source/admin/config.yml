@@ -83,16 +83,8 @@ collections:
             name: hero
             widget: object
             fields:
-              - label: Title
-                name: title
-                widget: string
-              - label: Images
-                name: images
-                widget: list
-                fields:
-                  - label: Image
-                    name: image
-                    widget: image
+              - {label: Title, name: title, widget: string}
+              - {label: Image, name: image, widget: image}
           - label: Story
             name: story
             widget: markdown
