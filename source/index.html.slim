@@ -2,26 +2,11 @@
 title: Somerset Railwayana
 ---
 
-section.hero
-  - if data.pages.home.hero.image
-    .carousel.slide data-ride="carousel"
-      ol.carousel-indicators
-        - data.pages.home.hero.image.each_with_index do |image, index|
-          li data-target="#carouselExampleIndicators" data-slide-to="#{index}" class="#{'active' if index == 0}"
-      .carousel-inner
-        - data.pages.home.hero.image.each_with_index do |image, index|
-          .carousel-item class="#{'active' if index == 0}"
-            = image_tag(image.path, alt: "Carousel Image")
-            .carousel-caption
-              h1 = data.pages.home.hero.title
-    script.
-      document.addEventListener("DOMContentLoaded", function() {
-        new bootstrap.Carousel(document.querySelector('.carousel.slide'));
-      });
-  - else
-    .caption
-      .row
-        h1 = p = data.pages.home.hero.title
+section.hero style=background_image(image_path(data.pages.home.hero.image))
+  .caption
+    .row
+      h1 = p = data.pages.home.hero.title
+	  
 
 section.homepage-story
   .container
@@ -34,10 +19,11 @@ section.homepage-products.products
     h2
       | Current Auction Items
     .row
-      // Product is structured: ['filename', 'data']
-      // Sort by newest product
+      //product is structured: ['filename', 'data']
+      //sort by newest product
       - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-        // To get the actual data:
+
+        //to get the actual data:
         = partial 'partials/products/product', locals: {product: product}
 
 section.homepage-news.news
@@ -45,6 +31,6 @@ section.homepage-news.news
     h2
       | Previous Auctions
     .news-items
-      // Get the first two most recent posts
+      //get the first two most recent posts
       - blog.articles.first(2).each do | article |
         = partial 'partials/news/news_item', locals: {article: article}
