@@ -2,16 +2,7 @@
 title: Somerset Railwayana
 ---
 
-section.hero
-  - if data.pages.home.hero.image.present?
-    - images = data.pages.home.hero.image
-    .carousel
-      - images.each do |image|
-        .carousel-item style="background-image: url(#{image_path(image)})"
-          //- Add any additional content for each carousel item here
-  - else
-    | No images found for the carousel
-
+section.hero style=background_image(image_path(data.pages.home.hero.image))
   .caption
     .row
       h1 = p = data.pages.home.hero.title
