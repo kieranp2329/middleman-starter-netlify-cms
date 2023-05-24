@@ -2,8 +2,8 @@ hero:
   image: /images/uploads/homepage-hero.jpg
   title: Somerset Railwayana
   images:
-    - image: /images/uploads/b-e-ba.jpg
-    - image: /images/uploads/br-il.jpg
-    - image: /images/uploads/header-image-garden-of-england.png
+    - image: /images/uploads/header-image-garden-of-england.jpg
+    - image: /images/uploads/homepage-hero.jpg
+    - image: /images/uploads/header-image-garden-of-england.jpg
     - image: /images/uploads/homepage-hero.jpg
 story: "> # **`Site Under Construction`**"
