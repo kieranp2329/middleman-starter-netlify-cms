@@ -2,11 +2,6 @@
 title: Somerset Railwayana
 ---
 
-section.hero
-  .caption
-    .row
-      h1 = p = data.pages.home.hero.title
-
 style.
   | @keyframes fadeBackground {
   |   0% {
@@ -70,8 +65,13 @@ style.
   |   background-size: cover;
   | }
 
+- data.pages.home.hero.images.each do |image|
+  div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
 
-	  
+section.hero
+  .caption
+    .row
+      h1 = p = data.pages.home.hero.title
 
 section.homepage-story
   .container
@@ -84,18 +84,17 @@ section.homepage-products.products
     h2
       | Current Auction Items
     .row
-      //product is structured: ['filename', 'data']
-      //sort by newest product
-      - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-
-        //to get the actual data:
-        = partial 'partials/products/product', locals: {product: product}
+    //product is structured: ['filename', 'data']
+    //sort by newest product
+    - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
+      //to get the actual data:
+      = partial 'partials/products/product', locals: {product: product}
 
 section.homepage-news.news
   .container
     h2
       | Previous Auctions
     .news-items
-      //get the first two most recent posts
-      - blog.articles.first(2).each do | article |
-        = partial 'partials/news/news_item', locals: {article: article}
+    //get the first two most recent posts
+    - blog.articles.first(2).each do | article |
+      = partial 'partials/news/news_item', locals: {article: article}
