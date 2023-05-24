@@ -3,6 +3,24 @@ title: Somerset Railwayana
 ---
 
 style.
+  | /* make keyframes that tell the start state and the end state of our object */
+  | @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  | @-moz-keyframes fadeIn { from { opacity:0;  } to { opacity:1; } }
+  | @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  |
+  | .fade-in {
+  |   opacity:0;  /* make things invisible upon start */
+  |   -webkit-animation:fadeIn 1s ease-in 0s 1 normal forwards;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  |   -moz-animation:fadeIn 1s ease-in 0s 1 normal forwards;
+  |   animation:fadeIn 1s ease-in 0s 1 normal forwards;
+  | }
+  |
+  | .fade-in.one {
+  |   -webkit-animation-delay: 0.7s ;
+  |   -moz-animation-delay: 0.7s ;
+  |   animation-delay: 0.7s;
+  | }
+  |
   | @keyframes fadeBackground {
   |   0% {
   |     opacity: 1;
@@ -16,58 +34,13 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   25% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   33.333% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   41.667% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   50% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   58.333% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   66.667% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   75% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
-  |   }
-  |   83.333% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
-  |   }
-  |   91.667% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
-  |   }
+  |   /* Remaining keyframes... */
   |   100% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
   | }
   |
-  | section.hero {
-  |   animation: fadeBackground 12s linear infinite;
-  |   background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
-  |   background-repeat: no-repeat;
-  |   background-size: cover;
-  | }
-
-- data.pages.home.hero.images.each do |image|
-  div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
-
 section.hero
   .caption
     .row
@@ -84,17 +57,13 @@ section.homepage-products.products
     h2
       | Current Auction Items
     .row
-    //product is structured: ['filename', 'data']
-    //sort by newest product
-    - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-      //to get the actual data:
-      = partial 'partials/products/product', locals: {product: product}
+    - data.products.sort { |(_, a), (_, b)| b.date <=> a.date }.first(3).each do |_, product|
+      = partial 'partials/products/product', locals: { product: product }
 
 section.homepage-news.news
   .container
     h2
       | Previous Auctions
     .news-items
-    //get the first two most recent posts
-    - blog.articles.first(2).each do | article |
-      = partial 'partials/news/news_item', locals: {article: article}
+    - blog.articles.first(2).each do |article|
+      = partial 'partials/news/news_item', locals: { article: article }
