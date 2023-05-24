@@ -13,11 +13,11 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   8.3% {
+  |   8.333% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   16.6% {
+  |   16.667% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
@@ -25,11 +25,11 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
-  |   33% {
+  |   33.333% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
-  |   41% {
+  |   41.667% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
@@ -37,7 +37,7 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
   |   }
-  |   58.3% {
+  |   58.333% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
   |   }
@@ -49,11 +49,11 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
   |   }
-  |   83% {
+  |   83.333% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
   |   }
-  |   91% {
+  |   91.667% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
   |   }
@@ -62,10 +62,40 @@ style.
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
   | }
+  |
+  | section.hero {
+  |   animation: fadeBackground 12s linear infinite;
+  |   background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
+  |   background-repeat: no-repeat;
+  |   background-size: cover;
+  | }
 
-script.
-  | document.addEventListener('DOMContentLoaded', function() {
-  |   const heroSection = document.querySelector('section.hero');
-  |   heroSection.style.backgroundImage = `url(${data.pages.home.hero.images[0].image})`;
-  |   heroSection.style.animation = 'fadeBackground 12s linear infinite';
-  | });
+
+	  
+
+section.homepage-story
+  .container
+    .row
+      .story-content
+        = markdown data.pages.home.story
+
+section.homepage-products.products
+  .container
+    h2
+      | Current Auction Items
+    .row
+      //product is structured: ['filename', 'data']
+      //sort by newest product
+      - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
+
+        //to get the actual data:
+        = partial 'partials/products/product', locals: {product: product}
+
+section.homepage-news.news
+  .container
+    h2
+      | Previous Auctions
+    .news-items
+      //get the first two most recent posts
+      - blog.articles.first(2).each do | article |
+        = partial 'partials/news/news_item', locals: {article: article}
