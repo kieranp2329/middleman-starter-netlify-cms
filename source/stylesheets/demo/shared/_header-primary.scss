@@ -24,6 +24,8 @@
       border-radius: 30px; /* Add rounded corners */
       border: 2px solid black; /* Add black border */
       padding: 6px 20px; /* Adjust padding as needed */
+
+      transition: background-color 0.3s ease; /* Add transition effect */
     }
 
     a {
@@ -37,7 +39,7 @@
 
     @media screen and (max-width: $screen-xs-max) {
       display: none;
-      
+
       li {
         display: block;
         margin: 15px auto; /* Center the navigation items */
@@ -99,6 +101,13 @@
       display: block;
       border-radius: 30px; /* Add rounded corners */
       border: 2px solid black; /* Add black border */
+
+      transition: background-color 0.3s ease; /* Add transition effect */
+    }
+
+    &:hover {
+      background-color: $primary-color; /* Change background color on hover */
+      border-color: $primary-color; /* Change border color on hover */
     }
   }
 }
