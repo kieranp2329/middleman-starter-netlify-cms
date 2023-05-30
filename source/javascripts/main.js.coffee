@@ -1,36 +1,10 @@
-document.addEventListener 'DOMContentLoaded', ->
+nav_button = document.querySelector('.nav-button')
+navigation = document.querySelector('.navigation')
 
-  # Get the search input element
-  searchInput = document.querySelector '#search-input'
+# Listen for click event
+nav_button.addEventListener 'click', (->
 
-  # Get all the product elements
-  products = document.querySelectorAll '.product'
-
-  # Function to handle search
-  handleSearch = -> 
-    searchTerm = searchInput.value.toLowerCase()
-
-    products.forEach (product) ->
-      title = product.querySelector('.title').textContent.toLowerCase()
-
-      if title.includes(searchTerm)
-        product.style.display = 'block'
-      else
-        product.style.display = 'none'
-
-  # Attach event listener to search input
-  searchInput.addEventListener 'input', handleSearch
-
-  # Get the navigation button element
-  navButton = document.querySelector '.nav-button'
-
-  # Get the navigation element
-  navigation = document.querySelector '.navigation'
-
-  # Listen for click event
-  navButton.addEventListener 'click', (->
-
-    # Open navigation and change toggle button
-    navigation.classList.toggle 'open'
-    navButton.classList.toggle 'active'
-  ), false
+  # open navigation and change toggle button
+  navigation.classList.toggle 'open'
+  nav_button.classList.toggle 'active'
+), false
