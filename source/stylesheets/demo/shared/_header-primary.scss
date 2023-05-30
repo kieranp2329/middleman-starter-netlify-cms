@@ -18,6 +18,10 @@
       flex-direction: column; /* Display nav-items in a column */
       align-items: center; /* Center the nav-items horizontally */
     }
+
+    li {
+      padding: 0 10px; /* Add padding to the nav-items */
+    }
   }
 
   .navigation {
