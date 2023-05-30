@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Attach event listener to search input
   searchInput.addEventListener('input', handleSearch);
 
-  // Get the navigation button element
-  const nav_button = document.querySelector('.nav-button');
-  const navigation = document.querySelector('.navigation');
-
-  // Listen for click event
-  nav_button.addEventListener('click', function() {
-    // Open navigation and change toggle button
-    navigation.classList.toggle('open');
-    nav_button.classList.toggle('active');
-  });
+  // Integrated navigation function
+  (function() {
+    var t, e;
+    t = document.querySelector('.nav-button');
+    e = document.querySelector('.navigation');
+    t.addEventListener('click', function() {
+      return e.classList.toggle('open');
+      t.classList.toggle('active');
+    }, false);
+  }).call(this);
 });
