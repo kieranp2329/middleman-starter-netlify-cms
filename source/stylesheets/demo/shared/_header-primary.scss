@@ -1,3 +1,4 @@
+
 .header-primary {
   position: absolute;
   width: 100%;
@@ -6,7 +7,12 @@
   z-index: 999;
 
   .logo {
-    display: none; /* Hide the logo */
+    width: 173px;
+    height: 80px;
+    a {
+      display: block;
+      padding: 26px 30px;
+    }
   }
 
   ul {
@@ -17,39 +23,23 @@
     position: absolute;
     top: 28px;
     right: 15px;
-
     li {
       display: inline-block;
       margin: 0 15px;
-
-      /* Add button styling */
-      button {
-        font-size: 18px;
-        font-weight: 700;
-        color: $text-color;
-        background: none;
-        border: none;
-        cursor: pointer;
-        
-        /* Button appearance */
-        padding: 8px 16px;
-        border-radius: 4px;
-        background-color: $button-background-color;
-        color: $button-text-color;
-        transition: background-color 0.3s ease-in-out;
-        
-        &:hover {
-          background-color: $button-hover-background-color;
-        }
+    }
+    a {
+      font-size: 18px;
+      font-weight: 700;
+      color: $text-color;
+      &.active, &:hover, &:focus{
+        color: $primary-color;
       }
     }
-
-    @media screen and (max-width: $screen-xs-max) {
+    @media screen and (max-width: $screen-xs-max){
       display: none;
     }
   }
-
-  .nav-button {
+  .nav-button{
     display: none;
     position: absolute;
     right: 0;
@@ -61,26 +51,21 @@
       width: 80px;
       height: 80px;
     }
-
     .open {
       display: block;
     }
-
     .close {
       display: none;
     }
-
     &.active {
       .open {
         display: none;
       }
-
       .close {
         display: block;
       }
     }
   }
-
   @media screen and (max-width: $screen-xs-max) {
     .navigation {
       display: none;
@@ -90,39 +75,14 @@
       right: 0;
       background: #fff;
       border-top: 1px solid $background-primary-color;
-
       li {
         display: block;
         margin: 30px 0;
-
-        /* Add button styling */
-        button {
-          display: block;
-          margin: 0;
-          padding: 0;
-          font-size: 18px;
-          font-weight: 700;
-          color: $text-color;
-          background: none;
-          border: none;
-          cursor: pointer;
-          
-          /* Button appearance */
-          padding: 8px 16px;
-          border-radius: 4px;
-          background-color: $button-background-color;
-          color: $button-text-color;
-          transition: background-color 0.3s ease-in-out;
-          
-          &:hover {
-            background-color: $button-hover-background-color;
-          }
-        }
       }
 
       &.open {
         height: calc(100vh - 80px);
-        display: block;
+        display: block
       }
     }
 
