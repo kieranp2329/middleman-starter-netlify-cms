@@ -22,4 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Attach event listener to search input
   searchInput.addEventListener('input', handleSearch);
+
+  // Get the navigation button element
+  const nav_button = document.querySelector('.nav-button');
+  const navigation = document.querySelector('.navigation');
+
+  // Listen for click event
+  nav_button.addEventListener('click', function() {
+    // Open navigation and change toggle button
+    navigation.classList.toggle('open');
+    nav_button.classList.toggle('active');
+  });
 });
