@@ -9,6 +9,27 @@
     display: none; /* Hide the logo */
   }
 
+  .logo-text {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: $text-color;
+    text-transform: uppercase;
+    pointer-events: none; /* Prevent text from being interactive */
+
+    &::after {
+      content: "SS";
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
   ul {
     margin: 0;
   }
