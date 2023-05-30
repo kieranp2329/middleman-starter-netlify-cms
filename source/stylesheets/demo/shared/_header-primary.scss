@@ -12,6 +12,12 @@
   ul {
     margin: 0;
     text-align: center; /* Center the nav-items horizontally */
+
+    @media screen and (max-width: $screen-xs-max) {
+      display: flex;
+      flex-direction: column; /* Display nav-items in a column */
+      align-items: center; /* Center the nav-items horizontally */
+    }
   }
 
   .navigation {
