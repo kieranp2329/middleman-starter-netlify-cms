@@ -5,7 +5,7 @@
       h1 itemprop="name" = item.title
 
       .weight
-        - currency = data.settings.units.currency || '€' 
+        - currency = data.settings.units.currency || '£' 
         span itemprop="priceCurrency" = currency
         span itemprop="price" = item.price.to_s 
     .center
@@ -18,10 +18,13 @@
           input type="hidden" name="amount" itemprop="price" value=item.price
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
- 
-    .body style="text-align: center;"
+
+    .body style="text-align: center; overflow-x: scroll;"
       div itemprop="description" style="text-align: left;"
-        = markdown item.body
+        .carousel-container
+          - images = item.body.scan(/!\[.*?\]\((.*?)\)/).flatten
+          - images.each do |img_path|
+            img src=img_path class="carousel-item"
 
         // CSS for images
         style type="text/css"
