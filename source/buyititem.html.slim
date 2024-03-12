@@ -19,19 +19,31 @@
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
 
-    .body style="text-align: center; overflow-x: scroll;"
+    .body style="text-align: center;"
       div itemprop="description" style="text-align: left;"
         .carousel-container
           - images = item.body.scan(/!\[.*?\]\((.*?)\)/).flatten
-          - images.each do |img_path|
-            img src=img_path class="carousel-item"
+          .carousel
+            - images.each_with_index do |img_path, index|
+              img src=img_path class="carousel-item" id="img#{index}"
 
-        // CSS for images
-        style type="text/css"
-          | .body img {
-          |   max-width: 100%;
-          |   height: auto;
-          |   display: block;
-          |   margin: 0 auto;
-          |   padding: 10px 0; // Adjust padding as needed
-          | }
+.style type="text/css"
+  | .carousel-container {
+  |   display: flex;
+  |   overflow-x: auto;
+  |   scroll-snap-type: x mandatory;
+  | }
+  | 
+  | .carousel-item {
+  |   flex: 0 0 auto;
+  |   scroll-snap-align: start;
+  |   margin-right: 10px; /* Adjust spacing between images */
+  | }
+  | 
+  | .body img {
+  |   max-width: 100%;
+  |   height: auto;
+  |   display: block;
+  |   margin: 0 auto;
+  |   padding: 10px 0; /* Adjust padding as needed */
+  | }
