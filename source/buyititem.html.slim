@@ -1,5 +1,5 @@
 .product-detail itemtype="http://schema.org/Product"
-  .image style=background_image(image_path(item.image))
+  .image style="background-image: url(#{image_path(item.image)});"
   .content
     .meta
       h1 itemprop="name" = item.title
@@ -20,29 +20,6 @@
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
  
     .body style="text-align: center;"
-      div itemprop="description" style="text-align: left;"
-        = markdown item.body
-
-        // CSS for images
-        style type="text/css"
-          | .body img {
-          |   max-width: 100%;
-          |   height: auto;
-          |   display: block;
-          |   margin: 0 auto;
-          |   padding: 10px 0; // Adjust padding as needed
-          | }
-          
-// JavaScript for Carousel
-script src="https://code.jquery.com/jquery-3.6.0.min.js"
-script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-script type="text/javascript".
-  $(document).ready(function(){
-    $('.body').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000, // Adjust speed as needed
-    });
-  });
+      .carousel
+        - item.body.scan(/!\[.*?\]\((.*?)\)/).each do |match|
+          img src=match[0] alt=""
