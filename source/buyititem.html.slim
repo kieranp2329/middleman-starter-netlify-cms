@@ -1,10 +1,5 @@
-- images = item.body.scan(/\!\[.*?\]\((.*?)\)/).flatten
 .product-detail itemtype="http://schema.org/Product"
-  .carousel-container
-    .carousel-inner
-      - images.each_with_index do |image, index|
-        .carousel-item class=(index == 0 ? 'active' : '')
-          img src=image class=(index == 0 ? 'active' : '')
+  .image style=background_image(image_path(item.image))
   .content
     .meta
       h1 itemprop="name" = item.title
@@ -23,16 +18,14 @@
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
     .body style="text-align: center;"
-      div.carousel.slide data-ride="carousel"
-        .carousel-inner
-          - images.each_with_index do |image, index|
-            .carousel-item class=(index == 0 ? 'active' : '')
-              img src=image class=(index == 0 ? 'active' : '')
-        a.carousel-control-prev href="#" role="button" data-slide="prev"
-          span.carousel-control-prev-icon aria-hidden="true"
-          span.sr-only Previous
-        a.carousel-control-next href="#" role="button" data-slide="next"
-          span.carousel-control-next-icon aria-hidden="true"
-          span.sr-only Next
       div itemprop="description" style="text-align: left;"
         = markdown item.body
+        // CSS for images
+        style type="text/css"
+          | .body img {
+          |   max-width: 100%;
+          |   height: auto;
+          |   display: block;
+          |   margin: 0 auto;
+          |   padding: 10px 0; // Adjust padding as needed
+          | }
