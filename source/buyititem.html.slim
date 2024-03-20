@@ -20,46 +20,19 @@
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
     .body style="text-align: center;"
       .carousel
-        .slides
+        //- Modify the class for Flickity compatibility
+        .carousel-cell.slides
           - item.body.scan(/!\[[^\]]*\]\(([^)]+)\)/).each do |match|
             img src=match[0] alt="Image"
-        button.prev ❮
-        button.next ❯
+        //- Remove previous and next buttons
       style type="text/css"
-        | .carousel {
-        |   position: relative;
-        |   width: 100%;
-        |   max-width: 600px; /* Adjust width as needed */
-        |   margin: 0 auto;
-        |   overflow: hidden;
-        | }
-        | 
-        | .carousel .slides {
-        |   display: flex;
-        | }
-        | 
-        | .carousel img {
-        |   width: 100%;
-        |   height: auto;
-        | }
-        | 
-        | .carousel button {
-        |   position: absolute;
-        |   top: 50%;
-        |   transform: translateY(-50%);
-        |   background-color: rgba(0, 0, 0, 0.5);
-        |   color: white;
-        |   border: none;
-        |   cursor: pointer;
-        |   padding: 10px;
-        |   z-index: 1;
-        | }
-        | 
-        | .carousel .prev {
-        |   left: 0;
-        | }
-        | 
-        | .carousel .next {
-        |   right: 0;
-        | }
-script src="/carousel.js"
+        | /* CSS for Flickity carousel styling */
+      script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
+      javascript:
+        // JavaScript for initializing Flickity carousel
+        document.addEventListener('DOMContentLoaded', function() {
+          var flkty = new Flickity('.carousel', {
+            // Flickity options (e.g., autoPlay, wrapAround, etc.)
+            // See Flickity documentation for available options
+          });
+        });
