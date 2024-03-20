@@ -20,12 +20,22 @@
     .body style="text-align: center;"
       div itemprop="description" style="text-align: left;"
         = markdown item.body
-        // CSS for images
-        style type="text/css"
-          | .body img {
-          |   max-width: 100%;
-          |   height: auto;
-          |   display: block;
-          |   margin: 0 auto;
-          |   padding: 10px 0; // Adjust padding as needed
-          | }
+        // Bootstrap Carousel
+        .carousel.slide data-ride="carousel" id="carouselExampleIndicators"
+          ol.carousel-indicators
+            - item.body.split("\n").each_with_index do |image, index|
+              - if image.include?('![](') # Check if the line contains an image
+                - classes = index == 0 ? 'active' : '' # Add 'active' class to the first indicator
+                li data-target="#carouselExampleIndicators" data-slide-to="#{index}" class="#{classes}"
+          .carousel-inner
+            - item.body.split("\n").each_with_index do |image, index|
+              - if image.include?('![](') # Check if the line contains an image
+                - classes = index == 0 ? 'carousel-item active' : 'carousel-item' # Add 'active' class to the first item
+                div class="#{classes}"
+                  img d-block w-100 src=image.gsub('![](', '').gsub(')', '')
+          a.carousel-control-prev href="#carouselExampleIndicators" role="button" data-slide="prev"
+            span.carousel-control-prev-icon aria-hidden="true"
+            span.sr-only Previous
+          a.carousel-control-next href="#carouselExampleIndicators" role="button" data-slide="next"
+            span.carousel-control-next-icon aria-hidden="true"
+            span.sr-only Next
