@@ -33,4 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
       t.classList.toggle('active');
     }, false);
   }).call(this);
+
+  // Function to handle carousel slide movement
+  function moveSlide(n) {
+    var slides = document.getElementsByClassName("slides")[0];
+    var slideWidth = slides.clientWidth;
+    slides.scrollLeft += n * slideWidth;
+  }
 });
