@@ -18,16 +18,13 @@
           input type="hidden" name="amount" itemprop="price" value=item.price
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
-
     .body style="text-align: center;"
       .carousel
         .slides
-          - item.body.scan(/\!\[.*?\]\((.*?)\)/) do |match|
-            img src=match[1] alt="Image"
+          - item.body.scan(/!\[[^\]]*\]\(([^)]+)\)/).each do |match|
+            img src=match[0] alt="Image"
       button.prev onclick="moveSlide(-1)" ❮
       button.next onclick="moveSlide(1)" ❯
-      
-      // CSS for images
       style type="text/css"
         | .carousel {
         |   position: relative;
