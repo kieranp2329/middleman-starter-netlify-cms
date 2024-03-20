@@ -19,16 +19,19 @@
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
     .body style="text-align: center;"
-      .carousel.carousel-cell.slides
+      .carousel
         - item.body.scan(/!\[[^\]]*\]\(([^)]+)\)/).each do |match|
-          img src=match[0] alt="Image" style="max-width: 100%; height: auto;" 
+          img src=match[0] alt="Image"
       style type="text/css"
-        | /* CSS for Flickity carousel styling */
-      script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
+        | /* CSS for Slick carousel */
+      script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
       javascript:
         document.addEventListener('DOMContentLoaded', function() {
-          var flkty = new Flickity('.carousel', {
-            // Flickity options (e.g., autoPlay, wrapAround, etc.)
-            // See Flickity documentation for available options
+          $('.carousel').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">❮</button>',
+            nextArrow: '<button type="button" class="slick-next">❯</button>'
           });
         });
