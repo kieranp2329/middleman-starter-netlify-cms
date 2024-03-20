@@ -28,34 +28,34 @@
     | .active {
     |   display: block;
     | }
-  script.
-    window.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('.body img');
-      let currentIndex = 0;
-
-      function showImage(index) {
-        images.forEach((image, i) => {
-          if (i === index) {
-            image.classList.add('active');
-          } else {
-            image.classList.remove('active');
-          }
-        });
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      }
-
-      // Show the first image initially
-      showImage(currentIndex);
-
-      // Automatically switch to the next image every 3 seconds
-      setInterval(nextImage, 3000);
-    });
+  script type="text/javascript"
+    | document.addEventListener('DOMContentLoaded', function() {
+    |   var images = document.querySelectorAll('.body img');
+    |   var currentIndex = 0;
+    | 
+    |   function showImage(index) {
+    |     images.forEach(function(image, i) {
+    |       if (i === index) {
+    |         image.classList.add('active');
+    |       } else {
+    |         image.classList.remove('active');
+    |       }
+    |     });
+    |   }
+    | 
+    |   function nextImage() {
+    |     currentIndex = (currentIndex + 1) % images.length;
+    |     showImage(currentIndex);
+    |   }
+    | 
+    |   function prevImage() {
+    |     currentIndex = (currentIndex - 1 + images.length) % images.length;
+    |     showImage(currentIndex);
+    |   }
+    | 
+    |   // Show the first image initially
+    |   showImage(currentIndex);
+    | 
+    |   // Automatically switch to the next image every 3 seconds
+    |   setInterval(nextImage, 3000);
+    | });
