@@ -18,33 +18,44 @@
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
     .body style="text-align: center;"
-      div itemprop="description" style="text-align: left;"
-        = markdown item.body
-        - images = item.body.scan(/!\[.*?\]\((.*?)\)/).flatten.uniq
-        - if images.any?
-          .carousel.slide(data-ride="carousel")
-            .carousel-inner
-              - images.each_with_index do |image, index|
-                - if index.zero?
-                  .carousel-item.active
-                    img.d-block.w-100(src=image alt="Image #{index + 1}")
-                - else
-                  .carousel-item
-                    img.d-block.w-100(src=image alt="Image #{index + 1}")
-          a.carousel-control-prev(href="#carouselExampleControls" role="button" data-slide="prev")
-            span.carousel-control-prev-icon(aria-hidden="true")
-            span.sr-only Previous
-          a.carousel-control-next(href="#carouselExampleControls" role="button" data-slide="next")
-            span.carousel-control-next-icon(aria-hidden="true")
-            span.sr-only Next
-        - else
-          p No images available.
-        // CSS for images
-        style type="text/css"
-          | .body img {
-          |   max-width: 100%;
-          |   height: auto;
-          |   display: block;
-          |   margin: 0 auto;
-          |   padding: 10px 0; // Adjust padding as needed
-          | }
+      .carousel-container
+        div itemprop="description" style="text-align: left;"
+          = markdown item.body
+  style type="text/css"
+    | .body img {
+    |   display: none;
+    | }
+    | .active {
+    |   display: block;
+    | }
+  script.
+    window.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.body img');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        images.forEach((image, i) => {
+          if (i === index) {
+            image.classList.add('active');
+          } else {
+            image.classList.remove('active');
+          }
+        });
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+
+      // Show the first image initially
+      showImage(currentIndex);
+
+      // Automatically switch to the next image every 3 seconds
+      setInterval(nextImage, 3000);
+    });
