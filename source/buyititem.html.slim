@@ -23,8 +23,8 @@
         .slides
           - item.body.scan(/!\[[^\]]*\]\(([^)]+)\)/).each do |match|
             img src=match[0] alt="Image"
-        button.prev onclick="moveSlide(-1)" ❮
-        button.next onclick="moveSlide(1)" ❯
+        button.prev ❮
+        button.next ❯
       style type="text/css"
         | .carousel {
         |   position: relative;
