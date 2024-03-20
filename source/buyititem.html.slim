@@ -1,6 +1,5 @@
 .product-detail itemtype="http://schema.org/Product"
-  .image
-    img src=image_path(item.image) alt="Product Image"
+  .image style=background_image(image_path(item.image))
   .content
     .meta
       h1 itemprop="name" = item.title
@@ -18,13 +17,15 @@
           input type="hidden" name="amount" itemprop="price" value=item.price
           input type="hidden" name="currency_code" value="GBP"
           input type="image" name="submit" border="0" src="https://static.vecteezy.com/system/resources/previews/019/787/003/original/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="PayPal - The safer, easier way to pay online" style="width: 25%; max-width: 300px;"
-    .body
-      - images = item.body.scan(/!\[\]\((.*?)\)/).flatten
-      .carousel-container
-        - if images.any?
-          .carousel
-            - images.each do |image|
-              .carousel-item
-                img src=image alt="Carousel Image"
+    .body style="text-align: center;"
       div itemprop="description" style="text-align: left;"
         = markdown item.body
+        // CSS for images
+        style type="text/css"
+          | .body img {
+          |   max-width: 100%;
+          |   height: auto;
+          |   display: block;
+          |   margin: 0 auto;
+          |   padding: 10px 0; // Adjust padding as needed
+          | }
