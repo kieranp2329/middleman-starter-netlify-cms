@@ -3,63 +3,26 @@ title: Somerset Railwayana
 ---
 
 style.
-  | @keyframes fadeBackground {
+  | @keyframes coolTransition {
   |   0% {
   |     opacity: 1;
+  |     transform: scale(1);
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   8% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
-  |   }
-  |   16% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
-  |   }
-  |   24.5% {
-  |     opacity: 1;
+  |   50% {
+  |     opacity: 0.5;
+  |     transform: scale(1.1);
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   33% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   41% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   49.5% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   58% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   66% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[2].image)});
-  |   }
-  |   74.5% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
-  |   }
-  |   83% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
-  |   }
-  |   91% {
-  |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[3].image)});
   |   }
   |   100% {
   |     opacity: 1;
-  |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
+  |     transform: scale(1);
+  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
   | }
   |
   | section.hero {
-  |   animation: fadeBackground 12s linear infinite;
+  |   animation: coolTransition 12s linear infinite;
   |   background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   background-repeat: repeat;
   |   background-size: cover;
@@ -84,10 +47,7 @@ section.homepage-products.products
     h2
       | Current Auction Items
     .row
-    //product is structured: ['filename', 'data']
-    //sort by newest product
     - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-      //to get the actual data:
       = partial 'partials/products/product', locals: {product: product}
 
 section.homepage-news.news
@@ -95,6 +55,5 @@ section.homepage-news.news
     h2
       | Previous Auctions
     .news-items
-    //get the first two most recent posts
     - blog.articles.first(2).each do | article |
       = partial 'partials/news/news_item', locals: {article: article}
