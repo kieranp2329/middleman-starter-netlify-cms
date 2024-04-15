@@ -34,12 +34,12 @@
   
     li {
       display: inline-block;
-      margin: 0 15px;
+      margin: 0 5px; /* Reduce margin between items for better responsiveness */
   
       /* Style nav-items like buttons */
       a {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 10px 15px; /* Adjust padding for better responsiveness */
         border: 1px solid $primary-color;
         border-radius: 4px;
         font-size: 18px;
@@ -57,7 +57,16 @@
     }
   
     @media screen and (max-width: $screen-xs-max) {
-      display: none;
+      display: block;
+      position: static;
+      text-align: center;
+      ul {
+        margin-top: 20px; /* Adjust margin for better spacing */
+      }
+      li {
+        display: block;
+        margin: 10px 0; /* Adjust margin for better spacing */
+      }
     }
   }
   
