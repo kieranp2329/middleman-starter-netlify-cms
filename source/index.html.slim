@@ -16,44 +16,17 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
+  | }
   |   100% {
   |     opacity: 1;
   |     background-color: white;
   |   }
-  | }
+  |
   |
   | section.hero {
   |   animation: fadeBetweenImages 12s linear infinite;
   |   background-repeat: no-repeat;
   |   background-size: cover;
-  | }
-  |
-  | section {
-  |   text-align: center;
-  | }
-  |
-  | .container {
-  |   display: flex;
-  |   flex-direction: column;
-  |   align-items: center;
-  | }
-  |
-  | .row {
-  |   width: 100%;
-  |   max-width: 1200px; /* Adjust as needed */
-  |   margin: 0 auto;
-  |   padding: 0 20px; /* Adjust as needed */
-  | }
-  |
-  | h2 {
-  |   margin-bottom: 20px; /* Adjust as needed */
-  | }
-  |
-  | .news-items {
-  |   display: grid;
-  |   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  |   gap: 20px; /* Adjust as needed */
-  |   justify-content: center;
   | }
 
 - data.pages.home.hero.images.each do |image|
