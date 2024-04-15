@@ -8,18 +8,23 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   50% {
-  |     opacity: 0;
-  |     background-image: none;
+  |   25% {
+  |     opacity: 1;
+  |     background-color: white;
   |   }
-  |   100% {
+  |   50% {
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
   | }
+  |   100% {
+  |     opacity: 1;
+  |     background-color: white;
+  |   }
+  | }
   |
   | section.hero {
-  |   animation: fadeBetweenImages 6s linear infinite;
+  |   animation: fadeBetweenImages 12s linear infinite;
   |   background-repeat: no-repeat;
   |   background-size: cover;
   | }
