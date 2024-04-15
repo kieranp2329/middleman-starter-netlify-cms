@@ -23,11 +23,19 @@
   .navigation {
     position: absolute;
     top: 28px;
-    right: 15px;
+    left: 50%; /* Center the navigation horizontally */
+    transform: translateX(-50%); /* Centering trick */
+    
+    ul {
+      padding: 0;
+      margin: 0;
+      text-align: center; /* Center the text within the navigation */
+    }
+  
     li {
       display: inline-block;
       margin: 0 15px;
-
+  
       /* Style nav-items like buttons */
       a {
         display: inline-block;
@@ -38,7 +46,7 @@
         font-weight: 700;
         color: $text-color;
         text-decoration: none;
-
+  
         &.active,
         &:hover,
         &:focus {
@@ -47,10 +55,12 @@
         }
       }
     }
+  
     @media screen and (max-width: $screen-xs-max) {
       display: none;
     }
   }
+  
 
   .nav-button {
     display: none;
