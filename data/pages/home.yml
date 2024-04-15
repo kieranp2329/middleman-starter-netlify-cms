@@ -1,9 +1,9 @@
 hero:
   image: /images/uploads/homepage-hero.jpg
-  title:
+  title: " "
   images:
     - image: /images/uploads/ticket1.png
     - image: /images/uploads/ticket2.png
     - image: /images/uploads/train3.gif
     - image: /images/uploads/train4.gif
-story: "# **`B﻿ritish Railway Luggage Label Specialist`**"
+story: "**B﻿ritish Railway Luggage Label Specialist**"
