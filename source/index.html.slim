@@ -3,33 +3,20 @@ title: Somerset Railwayana
 ---
 
 style.
-  | @keyframes coolTransition {
-  |   0% {
+  | @keyframes fadeInOut {
+  |   0%, 100% {
   |     opacity: 1;
-  |     transform: scale(1);
   |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
-  |   45% {
-  |     opacity: 1;
-  |     transform: scale(1);
-  |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
-  |   }
-  |   55% {
+  |   50% {
   |     opacity: 0;
-  |     transform: scale(1.1);
-  |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
-  |   }
-  |   100% {
-  |     opacity: 1;
-  |     transform: scale(1);
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
   | }
   |
   | section.hero {
-  |   animation: coolTransition 12s linear infinite;
-  |   background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
-  |   background-repeat: repeat;
+  |   animation: fadeInOut 12s linear infinite;
+  |   background-repeat: no-repeat;
   |   background-size: cover;
   | }
 
