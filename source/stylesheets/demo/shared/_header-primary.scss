@@ -35,6 +35,7 @@
     li {
       display: inline-block;
       margin: 0 5px;
+      position: relative; /* Add position relative to the parent */
   
       a {
         display: inline-block;
@@ -56,8 +57,10 @@
   
       /* Center the dropdown menu */
       ul {
-        left: 50%;
-        transform: translateX(-50%);
+        position: absolute;
+        top: 100%; /* Position the dropdown below the parent item */
+        left: 0; /* Align the dropdown with the left edge of the parent item */
+        width: 100%; /* Make the dropdown full width */
       }
     }
   
@@ -71,13 +74,6 @@
       li {
         display: block;
         margin: 10px 0;
-        position: relative; /* Add position relative to the parent */
-      }
-      ul ul {
-        position: absolute;
-        top: 100%; /* Position the dropdown below the parent item */
-        left: 0; /* Align the dropdown with the left edge of the parent item */
-        width: 100%; /* Make the dropdown full width */
       }
     }
   }
