@@ -37,10 +37,10 @@ section.homepage-story
 section.homepage-products.products
   .container
     h2
-      | Current Auction Items
+      | Current Buy It Now Items
     .row
-    - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-      = partial 'partials/products/product', locals: {product: product}
+    - data.butititems.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, item |
+      = partial 'partials/products/buyit', locals: {product: item}
 
 section.homepage-news.news
   .container
