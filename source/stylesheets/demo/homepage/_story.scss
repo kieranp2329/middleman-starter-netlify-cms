@@ -1,7 +1,6 @@
 .homepage-story {
   background: $secondary-color;
 
-  // Story content styles
   .story-content {
     @extend %column;
     @extend %col-sm-8;
@@ -9,23 +8,20 @@
     padding-bottom: 60px;
     color: rgba(255, 255, 255, 1);
 
-    // Heading styles
     h2 {
       margin: 0 0 15px;
       font-size: 32px;
       font-weight: 700;
     }
 
-    // Paragraph styles
     p {
       margin: 0;
       font-size: 24px;
       line-height: 36px;
-      max-width: 100%; // Ensure text spans entire page width
+      
     }
 
-    // Responsive adjustments
-    @media screen and (max-width: $screen-xs-max){
+    @media screen and(max-width: $screen-xs-max){
       padding-top: 30px;
       padding-bottom: 30px;
 
