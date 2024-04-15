@@ -27,33 +27,61 @@ style.
   |   background-repeat: no-repeat;
   |   background-size: cover;
   | }
+  |
+  | section {
+  |   text-align: center;
+  | }
+  |
+  | .container {
+  |   display: flex;
+  |   flex-direction: column;
+  |   align-items: center;
+  | }
+  |
+  | .row {
+  |   width: 100%;
+  |   max-width: 1200px; /* Adjust as needed */
+  |   margin: 0 auto;
+  |   padding: 0 20px; /* Adjust as needed */
+  | }
+  |
+  | h2 {
+  |   margin-bottom: 20px; /* Adjust as needed */
+  | }
+  |
+  | .news-items {
+  |   display: grid;
+  |   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  |   gap: 20px; /* Adjust as needed */
+  |   justify-content: center;
+  | }
 
 - data.pages.home.hero.images.each do |image|
   div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
 
-section.hero.centered-container
-  .caption.centered-text
+section.hero
+  .caption
     .row
       h1 = p = data.pages.home.hero.title
 
-section.homepage-story.centered-container
+section.homepage-story
   .container
     .row
-      .story-content.centered-text
+      .story-content
         = markdown data.pages.home.story
 
-section.homepage-products.products.centered-container
+section.homepage-products.products
   .container
-    h2.centered-text
+    h2
       | Current Auction Items
-    .row.centered-row
+    .row
     - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
       = partial 'partials/products/product', locals: {product: product}
 
-section.homepage-news.news.centered-container
+section.homepage-news.news
   .container
-    h2.centered-text
+    h2
       | Previous Auctions
-    .news-items.centered-row
+    .news-items
     - blog.articles.first(2).each do | article |
       = partial 'partials/news/news_item', locals: {article: article}
