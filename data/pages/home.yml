@@ -1,6 +1,6 @@
 hero:
   image: /images/uploads/homepage-hero.jpg
-  title: --
+  title:
   images:
     - image: /images/uploads/ticket1.png
     - image: /images/uploads/ticket2.png
