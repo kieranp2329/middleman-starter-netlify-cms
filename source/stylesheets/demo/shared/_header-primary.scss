@@ -25,21 +25,22 @@
     top: 28px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%; /* Set width to 100% */
+    text-align: center; /* Center align the navigation items */
     
     ul {
       padding: 0;
       margin: 0;
-      text-align: center;
+      background-color: white; /* Set background color to white */
     }
   
     li {
       display: inline-block;
-      margin: 0 5px;
-      position: relative; /* Add position relative to the parent */
+      margin: 0 15px;
   
       a {
         display: inline-block;
-        padding: 10px 15px;
+        padding: 10px 20px;
         border: 1px solid $primary-color;
         border-radius: 4px;
         font-size: 18px;
@@ -54,27 +55,10 @@
           background-color: $primary-color;
         }
       }
-  
-      /* Center the dropdown menu */
-      ul {
-        position: absolute;
-        top: 100%; /* Position the dropdown below the parent item */
-        left: 0; /* Align the dropdown with the left edge of the parent item */
-        width: 100%; /* Make the dropdown full width */
-      }
     }
   
     @media screen and (max-width: $screen-xs-max) {
-      display: block;
-      position: static;
-      text-align: center;
-      ul {
-        margin-top: 20px;
-      }
-      li {
-        display: block;
-        margin: 10px 0;
-      }
+      display: none;
     }
   }
   
