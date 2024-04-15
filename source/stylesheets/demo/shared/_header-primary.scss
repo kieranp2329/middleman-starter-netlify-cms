@@ -23,23 +23,22 @@
   .navigation {
     position: absolute;
     top: 28px;
-    left: 50%; /* Center the navigation horizontally */
-    transform: translateX(-50%); /* Centering trick */
+    left: 50%;
+    transform: translateX(-50%);
     
     ul {
       padding: 0;
       margin: 0;
-      text-align: center; /* Center the text within the navigation */
+      text-align: center;
     }
   
     li {
       display: inline-block;
-      margin: 0 5px; /* Reduce margin between items for better responsiveness */
+      margin: 0 5px;
   
-      /* Style nav-items like buttons */
       a {
         display: inline-block;
-        padding: 10px 15px; /* Adjust padding for better responsiveness */
+        padding: 10px 15px;
         border: 1px solid $primary-color;
         border-radius: 4px;
         font-size: 18px;
@@ -54,6 +53,12 @@
           background-color: $primary-color;
         }
       }
+  
+      /* Center the dropdown menu */
+      ul {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   
     @media screen and (max-width: $screen-xs-max) {
@@ -61,11 +66,18 @@
       position: static;
       text-align: center;
       ul {
-        margin-top: 20px; /* Adjust margin for better spacing */
+        margin-top: 20px;
       }
       li {
         display: block;
-        margin: 10px 0; /* Adjust margin for better spacing */
+        margin: 10px 0;
+        position: relative; /* Add position relative to the parent */
+      }
+      ul ul {
+        position: absolute;
+        top: 100%; /* Position the dropdown below the parent item */
+        left: 0; /* Align the dropdown with the left edge of the parent item */
+        width: 100%; /* Make the dropdown full width */
       }
     }
   }
