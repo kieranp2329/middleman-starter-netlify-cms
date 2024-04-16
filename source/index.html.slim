@@ -87,6 +87,15 @@ section.homepage-products.products
     - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
       = partial 'partials/products/product', locals: {product: product}
 
+section.homepage-buy-now.buy-now
+  .container
+    h2
+      | Buy It Now Items
+    .row
+    - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
+      = partial 'partials/products/buyit', locals: {product: item}
+
+
 section.homepage-news.news
   .container
     h2
