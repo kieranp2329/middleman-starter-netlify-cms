@@ -93,7 +93,7 @@ section.homepage-buy-now.buy-now
       | Buy It Now Items
     .row
     - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
-      = partial 'partials/products/buyit', locals: {product: item}
+      = partial 'partials/products/product', locals: {product: item}
 
 
 section.homepage-news.news
