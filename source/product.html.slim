@@ -12,6 +12,8 @@
         - currency = data.settings.units.currency || '€' 
         span = currency + product.price.to_s 
 
+    h2.bid-title Bid on this item style="text-align: center; margin-bottom: 20px;"
+
     form.netlify-form action="#" method="post" data-netlify="true" name=product.title style="max-width: 90%; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;"
 
       input type="hidden" name="form-name" value="product-inquiry"
