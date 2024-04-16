@@ -1,7 +1,7 @@
 .product-detail
   .image style=background_image(image_path(product.image))
   .content
-    .meta
+    .meta style="padding-bottom: 10%;"
       h1 = product.title
 
       .weight
@@ -12,7 +12,7 @@
         - currency = data.settings.units.currency || '€' 
         span = currency + product.price.to_s 
 
-    form.netlify-form action="#" method="post" data-netlify="true" name=product.title style="max-width: 90%; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; padding-top: 10%"
+    form.netlify-form action="#" method="post" data-netlify="true" name=product.title style="max-width: 90%; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;"
 
       input type="hidden" name="form-name" value="product-inquiry"
       input type="hidden" name="product" value=product.title
