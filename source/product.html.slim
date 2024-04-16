@@ -15,7 +15,7 @@
     .body
       = markdown product.body
 
-  form.netlify-form action="#" method="post"
+  form.netlify-form action="#" method="post" netlify
     input type="hidden" name="form-name" value="product-inquiry"
     input type="hidden" name="product" value=product.title
     input type="text" name="name" placeholder="Your Name" required
