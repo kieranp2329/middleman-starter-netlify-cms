@@ -1,31 +1,24 @@
 .product-detail
-  .image style="background-image: url(#{image_path(product.image)})"
+  .image style=background_image(image_path(product.image))
   .content
     .meta
       h1 = product.title
 
       .weight
         - weight = data.settings.units.weight || 'kg'
-        span = "#{weight} #{product.weight}"
+        span = weight + product.weight.to_s
 
       .price
         - currency = data.settings.units.currency || '€' 
-        span = "#{currency} #{product.price}"
+        span = currency + product.price.to_s 
 
     .body
       = markdown product.body
 
-    form action="#" method="POST" netlify data-netlify="true" name="#{product.title.downcase.gsub(' ', '-')}-form"
-      label for="name" Name:
-      input type="text" id="name" name="name" required
-
-      label for="phone" Phone Number:
-      input type="tel" id="phone" name="phone" required
-
-      label for="email" Email:
-      input type="email" id="email" name="email" required
-
-      input type="hidden" name="form-name" value="#{product.title.downcase.gsub(' ', '-')}-form"
-      input type="hidden" name="product-title" value="#{product.title}"
-
-      input type="submit" value="Submit"
+  form.netlify-form action="#" method="post"
+    input type="hidden" name="form-name" value="product-inquiry"
+    input type="hidden" name="product" value=product.title
+    input type="text" name="name" placeholder="Your Name" required
+    input type="email" name="email" placeholder="Your Email" required
+    textarea name="message" placeholder="Your Message" required
+    button type="submit" Submit
