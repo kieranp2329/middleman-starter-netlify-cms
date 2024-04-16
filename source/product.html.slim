@@ -14,10 +14,11 @@
 
     h2.bid-title style="text-align: center; margin-bottom: 20px; text-color: #dfc2a3;" Bid on this item
 
-    form.netlify-form method="post" action="eluglab.com" data-netlify="true" name=product.title style="max-width: 90%; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;"
+    form.netlify-form method="post" action="https://formspree.io/f/xjvnjbbg" name="product-inquiry" style="max-width: 90%; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;"
 
-      input type="hidden" name="form-name" value="product-inquiry"
-      input type="hidden" name="product" value=product.title
+      input type="hidden" name="_subject" value="New Bid for #{product.title}"
+      input type="text" name="Lot Name" value=product.title style="display:none;" // Hide input but submit the product title as "Lot Name"
+      input type="number" name="Lot Number" value=product.weight style="display:none;" // Hide input but submit the product weight as "Lot Number"
 
       input type="text" name="name" placeholder="Your Name" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
       input type="tel" name="phone" placeholder="Your Phone Number" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
