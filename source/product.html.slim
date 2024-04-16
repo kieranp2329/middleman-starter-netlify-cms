@@ -12,17 +12,18 @@
         - currency = data.settings.units.currency || '€' 
         span = currency + product.price.to_s 
 
-    form.netlify-form action="#" method="post" data-netlify="true" name=product.title
+    form.netlify-form action="#" method="post" data-netlify="true" name=product.title style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;"
+
       input type="hidden" name="form-name" value="product-inquiry"
       input type="hidden" name="product" value=product.title
 
-      input type="text" name="name" placeholder="Your Name" required="required"
-      input type="tel" name="phone" placeholder="Your Phone Number" required="required"
-      input type="email" name="email" placeholder="Your Email" required="required"
-      input type="text" name="address" placeholder="Your Address" required="required"
-      input type="number" name="bid" placeholder="Your Bid (GBP)" required="required"
+      input type="text" name="name" placeholder="Your Name" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+      input type="tel" name="phone" placeholder="Your Phone Number" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+      input type="email" name="email" placeholder="Your Email" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+      input type="text" name="address" placeholder="Your Address" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+      input type="number" name="bid" placeholder="Your Bid (GBP)" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
 
-      button type="submit" Submit
+      button type="submit" Submit style="width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;"
 
     .body
       = markdown product.body
