@@ -2,6 +2,5 @@ nav_items:
   - {label: 'Home', path: '/'}
   - {label: 'Current Auction', path: '/products/'} 
   - {label: 'Buy It Now Items', path: '/buyititems'}
-  - {label: 'Place a Bid', path: '/bidding'}  
   - {label: 'Previous Auctions', path: '/news'}
 
