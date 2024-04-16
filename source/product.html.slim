@@ -16,11 +16,11 @@
       input type="hidden" name="form-name" value="product-inquiry"
       input type="hidden" name="product" value=product.title
 
-      input type="text" name="name" placeholder="Your Name" required
-      input type="tel" name="phone" placeholder="Your Phone Number" required
-      input type="email" name="email" placeholder="Your Email" required
-      input type="text" name="address" placeholder="Your Address" required
-      input type="number" name="bid" placeholder="Your Bid (GBP)" required
+      == text_field_tag 'name', nil, placeholder: 'Your Name', required: true
+      == telephone_field_tag 'phone', nil, placeholder: 'Your Phone Number', required: true
+      == email_field_tag 'email', nil, placeholder: 'Your Email', required: true
+      == text_field_tag 'address', nil, placeholder: 'Your Address', required: true
+      == number_field_tag 'bid', nil, placeholder: 'Your Bid (GBP)', required: true
 
       button type="submit" Submit
 
