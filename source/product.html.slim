@@ -1,7 +1,7 @@
 .product-detail
   .image style=background_image(image_path(product.image))
   .content
-    .meta style="margin-bottom: 10%;"
+    .meta style="margin-bottom: 5%;"
       h1 = product.title
 
       .weight
@@ -23,7 +23,7 @@
       input type="text" name="address" placeholder="Your Address" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
       input type="number" name="bid" placeholder="Your Bid (GBP)" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
 
-      button type="submit" style="width: 100%; padding: 10px; background-color: #dfc2a3; color: #fff; border: none; border-radius: 4px; cursor: pointer;" Submit
+      button type="submit" style="width: 100%; padding: 10px; background-color: #dfc2a3; color: #fff; border: none; border-radius: 4px; cursor: pointer; max-width: 50%;" Submit
 
     .body
       = markdown product.body
