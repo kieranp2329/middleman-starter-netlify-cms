@@ -16,15 +16,20 @@ style.
   |     opacity: 1;
   |     background-image: url(#{image_path(data.pages.home.hero.images[1].image)});
   |   }
-  |   100% {
+  |   75% {
   |     opacity: 1;
   |     background-color: white;
+  |   }
+  |   100% {
+  |     opacity: 1;
+  |     background-image: url(#{image_path(data.pages.home.hero.images[0].image)});
   |   }
   | }
   |
   |
   | section.hero {
   |   animation: fadeBetweenImages 12s linear infinite;
+  |   background-repeat: no-repeat;
   |   background-size: cover;
   | }
   |
@@ -70,7 +75,8 @@ section.hero
 
 section.homepage-story
   .container
-      .story-content style="margin: 0 auto;"
+    .row
+      .story-content
         = markdown data.pages.home.story
 
 section.homepage-products.products
