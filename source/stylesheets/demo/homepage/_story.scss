@@ -11,10 +11,7 @@
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   white-space: nowrap; // Prevent text from wrapping
-  overflow: hidden; // Hide overflow text
-  line-height: 1; // Ensure the text stays on one line
 }
 
 .homepage-story {
@@ -25,7 +22,7 @@
 
 @media screen and (max-width: 768px) {
   .story-content {
-    font-size: calc(100% - 1vw); // Adjust font size proportionally with viewport width
+    font-size: 90%; // Adjust font size to 90% on smaller screens
     padding: 10px; // Adjust padding for smaller screens
   }
 }
