@@ -1,35 +1,52 @@
 .homepage-story {
-  background: $secondary-color;
+  position: relative;
+  overflow: hidden;
+}
 
-  .story-content {
-    @extend %column;
-    @extend %col-sm-8;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
+.homepage-story .story-content {
+  @extend %column;
+  @extend %col-sm-8;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  animation: bobbing 3s infinite alternate;
+  border: 5px solid $secondary-color;
+  border-radius: 20px;
+}
 
-    h1 {
-      margin: 0 0 15px;
-      font-size: 32px;
-      font-weight: 700;
-    }
+@keyframes bobbing {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-    p {
-      margin: 0;
-      font-size: 24px;
-      line-height: 36px;
-      
-    }
+.homepage-story .story-content h1 {
+  margin: 0 0 15px;
+  font-size: 32px;
+  font-weight: 700;
+}
 
-    @media screen and(max-width: $screen-xs-max){
-      padding-top: 30px;
-      padding-bottom: 30px;
+.homepage-story .story-content p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 36px;
+}
 
-      p {
-        font-size: 16px;
-        line-height: 24px;
-      }
-    }
+@media screen and (max-width: $screen-xs-max) {
+  .homepage-story .story-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .homepage-story .story-content p {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
