@@ -3,19 +3,6 @@ footer {
   background-color: #000; /* Set background color to black */
   color: #fff; /* Set text color to white */
 
-  .header-primary {
-    position: relative;
-    height: auto;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-
-    .navigation {
-      background-color: transparent;
-      a {
-        color: #fff; /* Set link color to white */
-      }
-    }
-  }
-
   .footer-content {
     padding: 30px 15px 60px;
     display: flex; /* Use flexbox for layout */
@@ -23,10 +10,10 @@ footer {
     align-items: center; /* Align items at the center vertically */
   }
 
-  .links {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack links vertically */
-    align-items: flex-start; /* Align links at the start */
+  .left-half,
+  .right-half {
+    flex: 1; /* Make each half take up equal space */
+    text-align: center; /* Center-align text */
   }
 
   a {
@@ -34,82 +21,5 @@ footer {
     color: #fff; /* Set link color to white */
     font-weight: bold; /* Set font weight to bold */
     margin-bottom: 10px; /* Add spacing between links */
-  }
-
-  label {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-  
-  button, input {
-    display: inline-block;
-    height: 60px;
-    padding: 15px;
-    border: none;
-    font-size: 18px;
-    line-height: 1.5;
-    background-color: #fff; /* Change background color of inputs to white */
-    color: #000; /* Change text color of inputs to black */
-  }
-  
-  input {
-    width: 80%;
-    border-radius: 4px 0 0 4px;
-  }
-
-  button {
-    width: 20%;
-    background: $primary-color;
-    color: #fff;
-    border-radius: 0 4px 4px 0;
-    font-weight: 700;
-  }
-}
-
-@media screen and (max-width: $screen-xs-max) {
-  footer {
-    .header-primary {
-      .logo a {
-        padding-left: 15px;
-      }
-      .nav-button {
-        display: none;
-      }
-      .navigation {
-        display: block;
-        position: relative;
-        top: auto;
-        border-top: 2px solid rgba(255, 255, 255, 0.1);
-        li {
-          margin: 15px 0;
-        }
-      }
-      ul {
-        padding-left: 15px;
-      }
-    }
-    input {
-      width: 60%;
-    }
-    button {
-      width: 40%;
-    } 
-
-    .footer-content {
-      padding: 15px 0 30px;
-    }
-
-    .social {
-      margin-top: 30px;
-      .icons {
-        float: none;
-      }
-      a {
-        margin-left: 0;
-        margin-right: 15px;
-      }
-    }
   }
 }
