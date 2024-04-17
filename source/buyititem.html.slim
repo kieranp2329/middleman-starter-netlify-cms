@@ -23,3 +23,11 @@
     .body style="text-align: center;"
       div itemprop="description" style="text-align: left;"
         = markdown item.body
+        style type="text/css"
+          | .body img {
+          |   max-width: 100%;
+          |   height: auto;
+          |   display: block;
+          |   margin: 0 auto;
+          |   padding: 10px 0; // Adjust padding as needed
+          | }
