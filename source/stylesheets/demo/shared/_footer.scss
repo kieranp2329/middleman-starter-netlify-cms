@@ -1,6 +1,7 @@
 footer {
   position: relative;
-  background-color: #000; /* Change background color to black */
+  background-color: #000; /* Set background color to black */
+  color: #fff; /* Set text color to white */
 
   .header-primary {
     position: relative;
@@ -10,47 +11,29 @@ footer {
     .navigation {
       background-color: transparent;
       a {
-        color: #fff;
+        color: #fff; /* Set link color to white */
       }
     }
   }
 
   .footer-content {
     padding: 30px 15px 60px;
-    color: #fff; /* Set text color to white */
     display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow items to wrap if necessary */
     justify-content: space-between; /* Distribute items evenly */
-    align-items: flex-start; /* Align items at the start */
+    align-items: center; /* Align items at the center vertically */
   }
 
-  .newsletter {
-    @extend %column;
-    @extend %col-md-6;
-    @extend %col-sm-8;
-    margin-bottom: 20px; /* Add margin to separate from other items */
-  }
-
-  .social {
-    @extend %column;
-    @extend %col-md-6;
-    @include clearfix;
-    margin-top: 40px;
+  .links {
     display: flex; /* Use flexbox for layout */
-    justify-content: flex-end; /* Align items at the end */
-    
-    a {
-      margin-left: 15px; /* Add margin between social links */
-      width: 60px; 
-      height: 60px;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 50%;
-    }
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links at the start */
+  }
 
-    img {
-      width: 100%;
-    }
+  a {
+    text-decoration: none; /* Remove default underline */
+    color: #fff; /* Set link color to white */
+    font-weight: bold; /* Set font weight to bold */
+    margin-bottom: 10px; /* Add spacing between links */
   }
 
   label {
@@ -58,7 +41,6 @@ footer {
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 1);
   }
   
   button, input {
