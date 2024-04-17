@@ -26,7 +26,6 @@ style.
   |   }
   | }
   |
-  |
   | section.hero {
   |   animation: fadeBetweenImages 12s linear infinite;
   |   background-repeat: no-repeat;
@@ -64,6 +63,43 @@ style.
   | .story-content {
   |   text-align: center; /* Align text to center */
   | }
+  |
+  | .terms-popup {
+  |   position: fixed;
+  |   bottom: 20px;
+  |   right: 20px;
+  |   background-color: #007bff;
+  |   color: #fff;
+  |   padding: 10px 20px;
+  |   border-radius: 20px 0 0 20px;
+  |   cursor: pointer;
+  |   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  |   transition: transform 0.3s ease-in-out;
+  | }
+  | .terms-popup:hover {
+  |   transform: translateY(-5px);
+  | }
+
+- content_for :head do
+  script.
+    document.addEventListener("DOMContentLoaded", function() {
+      const popup = document.createElement('div');
+      popup.classList.add('terms-popup');
+      popup.textContent = 'Terms';
+      popup.addEventListener('click', function() {
+        window.location.href = '/terms';
+      });
+      document.body.appendChild(popup);
+
+      window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          popup.style.display = 'block';
+        } else {
+          popup.style.display = 'none';
+        }
+      });
+    });
 
 - data.pages.home.hero.images.each do |image|
   div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
