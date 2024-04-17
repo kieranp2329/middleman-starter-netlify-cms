@@ -6,12 +6,11 @@
 .homepage-story .story-content {
   @extend %column;
   @extend %col-sm-8;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding: 5% 3%; // Adjust padding to maintain thin border
   margin: 20px; // Increase margin to create space around the content
   color: $secondary-color; // Set text color to secondary color
   text-align: center;
-  border: 3px solid $secondary-color; // Set border color to secondary color
+  border: 0.1em solid $secondary-color; // Set border thickness relative to font size
   border-radius: 10px; // Adjust border radius as needed
   animation: bobbing 2s infinite alternate; // Adjust animation duration
 }
@@ -21,7 +20,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); // Adjust the bobbing distance
+    transform: translateY(-0.2em); // Adjust the bobbing distance
   }
   100% {
     transform: translateY(0);
