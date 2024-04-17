@@ -10,7 +10,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   white-space: nowrap; // Prevent text from wrapping
   overflow: hidden; // Hide overflow text
-  text-overflow: ellipsis; // Display ellipsis for overflow text
 }
 
 .homepage-story {
@@ -21,7 +20,7 @@
 
 @media screen and (max-width: 768px) {
   .story-content {
-    font-size: 16px; // Adjust font size for smaller screens
+    font-size: 70%; // Adjust font size to 70% on smaller screens
     padding: 10px; // Adjust padding for smaller screens
   }
 }
