@@ -72,13 +72,6 @@ style.
   | .story-content {
   |   text-align: center; /* Align text to center */
   | }
-  |
-  | .products-grid {
-  |   display: grid;
-  |   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  |   gap: 20px;
-  |   justify-content: center;
-  | }
 
 - data.pages.home.hero.images.each do |image|
   div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
@@ -97,17 +90,17 @@ section.homepage-products.products
   .container
     h1.auction-header
       u Current Auction Items
-    .row.products-grid
-      - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
-        = partial 'partials/products/product', locals: {product: product}
+    .row
+    - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
+      = partial 'partials/products/product', locals: {product: product}
 
 section.homepage-products.products
   .container
     h1.auction-header
       u Buy It Now Items
-    .row.products-grid
-      - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
-        = partial 'partials/products/buyit', locals: {product: item}
+    .row
+    - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
+      = partial 'partials/products/buyit', locals: {product: item}
 
 
 section.homepage-news.news
