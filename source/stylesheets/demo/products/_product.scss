@@ -1,6 +1,8 @@
 %product {
   color: $text-color;
   margin-bottom: 30px;
+  border: 0.2em solid #333333;
+  
 
   &:hover, &:focus {
     a {
