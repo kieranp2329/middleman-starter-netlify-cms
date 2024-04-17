@@ -8,6 +8,7 @@
   @extend %col-sm-8;
   padding-top: 5%;
   padding-bottom: 5%;
+  margin: 20px; // Increase margin to create space around the content
   color: $secondary-color; // Set text color to secondary color
   text-align: center;
   border: 3px solid $secondary-color; // Set border color to secondary color
