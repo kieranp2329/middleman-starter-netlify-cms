@@ -8,10 +8,11 @@
   @extend %col-sm-8;
   padding: 1%; // Adjust padding to maintain thin border
   margin: 2%; // Increase margin to create space around the content
-  color: $secondary-color; // Set text color to secondary color
+  color: #fff; // Set text color to secondary color
   text-align: center;
-  border: 0.29em solid $secondary-color; // Set border thickness relative to font size
+  border: 0.29em solid #333333; // Set border thickness relative to font size
   border-radius: 2%; // Adjust border radius as needed
+  background-color: #dfc2a3;
 }
 
 @keyframes bobbing {
