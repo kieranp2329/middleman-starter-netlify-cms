@@ -1,13 +1,14 @@
 %product {
   color: $text-color;
   margin-bottom: 30px;
-  border: 0.2em solid #333333;
+  
   
 
   &:hover, &:focus {
     a {
       box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10);
       text-decoration: none;
+      border: 0.2em solid #333333;
     }
   }
 
