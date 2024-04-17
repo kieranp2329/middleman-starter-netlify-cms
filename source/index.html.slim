@@ -82,24 +82,24 @@ style.
 
 - content_for :head do
   script.
-    document.addEventListener("DOMContentLoaded", function() {
-      const popup = document.createElement('div');
-      popup.classList.add('terms-popup');
-      popup.textContent = 'Terms';
-      popup.addEventListener('click', function() {
-        window.location.href = '/terms';
-      });
-      document.body.appendChild(popup);
-
-      window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        if (scrollY > 100) {
-          popup.style.display = 'block';
-        } else {
-          popup.style.display = 'none';
-        }
-      });
-    });
+    | document.addEventListener("DOMContentLoaded", function() {
+    |   const popup = document.createElement('div');
+    |   popup.classList.add('terms-popup');
+    |   popup.textContent = 'Terms';
+    |   popup.addEventListener('click', function() {
+    |     window.location.href = '/terms';
+    |   });
+    |   document.body.appendChild(popup);
+    |
+    |   window.addEventListener('scroll', function() {
+    |     const scrollY = window.scrollY;
+    |     if (scrollY > 100) {
+    |       popup.style.display = 'block';
+    |     } else {
+    |       popup.style.display = 'none';
+    |     }
+    |   });
+    | });
 
 - data.pages.home.hero.images.each do |image|
   div.preload-image style="background-image: url(#{image_path(image.image)}); display: none;"
