@@ -1,6 +1,6 @@
 footer {
   position: relative;
-  background-color: $text-color;
+  background-color: #000; /* Change background color to black */
 
   .header-primary {
     position: relative;
@@ -17,6 +17,7 @@ footer {
 
   .footer-content {
     padding: 30px 15px 60px;
+    color: #fff; /* Set text color to white */
   }
 
   .newsletter {
@@ -41,14 +42,12 @@ footer {
       height: 60px;
       padding: 15px;
       background-color: #fff;
-      border-radius: 50%
-
+      border-radius: 50%;
     }
     img {
       width: 100%;
     }
   }
-
 
   label {
     display: block;
@@ -56,20 +55,21 @@ footer {
     font-size: 18px;
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
-    
   }
+  
   button, input {
     display: inline-block;
     height: 60px;
     padding: 15px;
     border: none;
     font-size: 18px;
-    line-height: 1.5
+    line-height: 1.5;
+    background-color: #fff; /* Change background color of inputs to white */
+    color: #000; /* Change text color of inputs to black */
   }
+  
   input {
     width: 80%;
-    background-color: #fff;
-    background-clip: padding-box;
     border-radius: 4px 0 0 4px;
   }
 
@@ -82,12 +82,11 @@ footer {
   }
 }
 
-  
 @media screen and (max-width: $screen-xs-max) {
   footer {
     .header-primary {
-      .logo  a {
-        padding-left: 15px
+      .logo a {
+        padding-left: 15px;
       }
       .nav-button {
         display: none;
