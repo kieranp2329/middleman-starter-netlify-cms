@@ -25,30 +25,28 @@
   }
 
   .product-content {
-    padding: 10px 30px;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
   }
 
   .title, .price {
-    display: inline-block;
+    display: block; /* Change to block for better stacking */
   }
 
   .price p {
-    font-size: 24px;
+    font-size: 18px; /* Adjust font size for smaller screens */
     font-weight: 700;
+    margin: 5px 0; /* Add margin for spacing */
   }
 
   .price {
-    float: right;
-    font-size: 24px;
+    font-size: 18px; /* Adjust font size for smaller screens */
     color: $primary-color;
+    margin-top: 10px; /* Add margin for spacing */
   }
 
   h3 {
-    margin: 0;
-  }
-
-  @media screen and (max-width: $screen-xs-max) {
-    margin-bottom: 15px;
+    margin: 10px 0; /* Add margin for spacing */
+    font-size: 20px; /* Adjust font size for smaller screens */
   }
 }
 
