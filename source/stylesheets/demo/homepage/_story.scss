@@ -8,9 +8,9 @@
   @extend %col-sm-8;
   padding: 1%; // Adjust padding to maintain thin border
   margin: 2%; // Increase margin to create space around the content
-  color: #333333; // Set text color to secondary color
+  color: #333333; // Refers to the border colour
   text-align: center;
-  border: 0.29em solid #333333; // Set border thickness relative to font size
+  border: 0.2em solid #333333; // Set border thickness relative to font size
   border-radius: 2%; // Adjust border radius as needed
   background-color: #dfc2a3;
 }
@@ -31,7 +31,7 @@
   margin: 0 0 1em;
   font-size: 3vw; // Adjust heading font size relative to viewport width
   font-weight: 700;
-  -webkit-text-fill-color: #fff; /* Hide the text fill */
+  -webkit-text-fill-color: #fff; // Refers to the inside colour
   -webkit-text-stroke: 0.05em ; /* Add black stroke around the text */
 }
 
