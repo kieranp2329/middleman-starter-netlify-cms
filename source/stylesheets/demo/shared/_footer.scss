@@ -14,6 +14,7 @@ footer {
 }
 
 .left-half,
+.middle-half,
 .right-half {
   flex: 1;
   text-align: center;
@@ -28,5 +29,5 @@ a {
 
 /* Ensure the main content doesn't overlap with the footer */
 .main-content {
-  margin-bottom: 120px; /* Adjust this value based on your footer's height */
+  margin-bottom: 180px; /* Adjust this value based on your footer's height */
 }
