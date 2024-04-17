@@ -97,7 +97,7 @@ section.homepage-products.products
 section.homepage-products.products
   .container
     h1.auction-header
-      | Buy It Now Items
+      u Buy It Now Items
     .row
     - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
       = partial 'partials/products/buyit', locals: {product: item}
