@@ -1,25 +1,27 @@
 footer {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #333333; /* Set background color to black */
   color: #fff; /* Set text color to white */
+}
 
-  .footer-content {
-    padding: 30px 15px 60px;
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Distribute items evenly */
-    align-items: center; /* Align items at the center vertically */
-  }
+.footer-content {
+  padding: 30px 15px 60px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Align items at the center vertically */
+}
 
-  .left-half,
-  .right-half {
-    flex: 1; /* Make each half take up equal space */
-    text-align: center; /* Center-align text */
-  }
+.left-half,
+.right-half {
+  flex: 1; /* Make each half take up equal space */
+  text-align: center; /* Center-align text */
+}
 
-  a {
-    text-decoration: none; /* Remove default underline */
-    color: #fff; /* Set link color to white */
-    font-weight: bold; /* Set font weight to bold */
-    margin-bottom: 10px; /* Add spacing between links */
-  }
+a {
+  text-decoration: none; /* Remove default underline */
+  color: #fff; /* Set link color to white */
+  font-weight: bold; /* Set font weight to bold */
+  margin-bottom: 10px; /* Add spacing between links */
 }
