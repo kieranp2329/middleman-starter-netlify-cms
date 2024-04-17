@@ -86,7 +86,7 @@ section.homepage-story
 section.homepage-products.products
   .container
     h1.auction-header
-      | Current Auction Items
+      u Current Auction Items
     .row
     - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
       = partial 'partials/products/product', locals: {product: product}
