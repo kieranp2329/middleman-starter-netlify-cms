@@ -31,8 +31,8 @@
   margin: 0 0 1em;
   font-size: 3vw; // Adjust heading font size relative to viewport width
   font-weight: 700;
-  -webkit-text-fill-color: transparent; /* Hide the text fill */
-  -webkit-text-stroke: 0.1em black; /* Add black stroke around the text */
+  -webkit-text-fill-color: #fff; /* Hide the text fill */
+  -webkit-text-stroke: 0.05em ; /* Add black stroke around the text */
 }
 
 .homepage-story .story-content p {
