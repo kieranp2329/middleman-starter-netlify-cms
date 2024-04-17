@@ -1,5 +1,7 @@
 footer {
-  position: relative;
+  position: absolute; /* Set position to absolute */
+  bottom: 0; /* Align footer to the bottom of the page */
+  width: 100%; /* Make footer span the entire width */
   background-color: #000; /* Set background color to black */
   color: #fff; /* Set text color to white */
 
