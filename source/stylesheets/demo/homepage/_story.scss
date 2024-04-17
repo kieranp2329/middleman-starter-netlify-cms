@@ -6,12 +6,12 @@
 .homepage-story .story-content {
   @extend %column;
   @extend %col-sm-8;
-  padding: 5% 3%; // Adjust padding to maintain thin border
-  margin: 5%; // Increase margin to create space around the content
+  padding: 1%; // Adjust padding to maintain thin border
+  margin: 2%; // Increase margin to create space around the content
   color: $secondary-color; // Set text color to secondary color
   text-align: center;
-  border: 0.1em solid $secondary-color; // Set border thickness relative to font size
-  border-radius: 5%; // Adjust border radius as needed
+  border: 0.29em solid $secondary-color; // Set border thickness relative to font size
+  border-radius: 2%; // Adjust border radius as needed
   animation: bobbing 2s infinite alternate; // Adjust animation duration
 }
 
@@ -41,7 +41,7 @@
 
 @media screen and (max-width: $screen-xs-max) {
   .homepage-story .story-content {
-    padding: 10% 5%; // Adjust padding for smaller screens
+    padding: 5%; // Adjust padding for smaller screens
   }
   
   .homepage-story .story-content h1 {
