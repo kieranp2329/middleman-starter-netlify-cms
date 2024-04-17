@@ -8,11 +8,11 @@
   @extend %col-sm-8;
   padding-top: 5%;
   padding-bottom: 5%;
-  color: rgba(255, 255, 255, 1);
+  color: $secondary-color; // Set text color to secondary color
   text-align: center;
-  animation: bobbing 3s infinite alternate;
-  border: 5px solid $secondary-color;
-  border-radius: 20px;
+  border: 3px solid $secondary-color; // Set border color to secondary color
+  border-radius: 10px; // Adjust border radius as needed
+  animation: bobbing 2s infinite alternate; // Adjust animation duration
 }
 
 @keyframes bobbing {
@@ -20,7 +20,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px); // Adjust the bobbing distance
   }
   100% {
     transform: translateY(0);
@@ -29,14 +29,14 @@
 
 .homepage-story .story-content h1 {
   margin: 0 0 15px;
-  font-size: 32px;
+  font-size: 28px; // Adjust heading font size
   font-weight: 700;
 }
 
 .homepage-story .story-content p {
   margin: 0;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 20px; // Adjust paragraph font size
+  line-height: 30px; // Adjust line height as needed
 }
 
 @media screen and (max-width: $screen-xs-max) {
