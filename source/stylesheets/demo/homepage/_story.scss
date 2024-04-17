@@ -7,46 +7,48 @@
   @extend %column;
   @extend %col-sm-8;
   padding: 5% 3%; // Adjust padding to maintain thin border
-  margin: 20px; // Increase margin to create space around the content
+  margin: 5%; // Increase margin to create space around the content
   color: $secondary-color; // Set text color to secondary color
   text-align: center;
   border: 0.1em solid $secondary-color; // Set border thickness relative to font size
-  border-radius: 10px; // Adjust border radius as needed
+  border-radius: 5%; // Adjust border radius as needed
   animation: bobbing 2s infinite alternate; // Adjust animation duration
 }
 
 @keyframes bobbing {
   0% {
-    transform: translateY(0);
+    transform: scale(1); // Reset scale
   }
   50% {
-    transform: translateY(-0.2em); // Adjust the bobbing distance
+    transform: scale(0.95); // Scale down slightly
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1); // Reset scale
   }
 }
 
 .homepage-story .story-content h1 {
-  margin: 0 0 15px;
-  font-size: 28px; // Adjust heading font size
+  margin: 0 0 1em;
+  font-size: 3vw; // Adjust heading font size relative to viewport width
   font-weight: 700;
 }
 
 .homepage-story .story-content p {
   margin: 0;
-  font-size: 20px; // Adjust paragraph font size
-  line-height: 30px; // Adjust line height as needed
+  font-size: 2vw; // Adjust paragraph font size relative to viewport width
+  line-height: 1.5;
 }
 
 @media screen and (max-width: $screen-xs-max) {
   .homepage-story .story-content {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 10% 5%; // Adjust padding for smaller screens
+  }
+  
+  .homepage-story .story-content h1 {
+    font-size: 6vw; // Adjust heading font size for smaller screens
   }
   
   .homepage-story .story-content p {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 4vw; // Adjust paragraph font size for smaller screens
   }
 }
