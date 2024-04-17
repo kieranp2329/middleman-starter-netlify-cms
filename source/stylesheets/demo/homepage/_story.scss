@@ -6,49 +6,51 @@
 .homepage-story .story-content {
   @extend %column;
   @extend %col-sm-8;
-  padding: 1%; // Adjust padding to maintain thin border
-  margin: 2%; // Increase margin to create space around the content
-  color: #fff; // Set text color to secondary color
+  padding: 1%; /* Adjust padding to maintain thin border */
+  margin: 2%; /* Increase margin to create space around the content */
+  color: #fff; /* Set text color to secondary color */
   text-align: center;
-  border: 0.29em solid #333333; // Set border thickness relative to font size
-  border-radius: 2%; // Adjust border radius as needed
+  border: 0.29em solid #333333; /* Set border thickness relative to font size */
+  border-radius: 2%; /* Adjust border radius as needed */
   background-color: #dfc2a3;
 }
 
 @keyframes bobbing {
   0% {
-    transform: scale(1); // Reset scale
+    transform: scale(1); /* Reset scale */
   }
   50% {
-    transform: scale(0.95); // Scale down slightly
+    transform: scale(0.95); /* Scale down slightly */
   }
   100% {
-    transform: scale(1); // Reset scale
+    transform: scale(1); /* Reset scale */
   }
 }
 
 .homepage-story .story-content h1 {
   margin: 0 0 1em;
-  font-size: 3vw; // Adjust heading font size relative to viewport width
+  font-size: 3vw; /* Adjust heading font size relative to viewport width */
   font-weight: 700;
+  border-color: #333333; /* Add border color */
 }
 
 .homepage-story .story-content p {
   margin: 0;
-  font-size: 2vw; // Adjust paragraph font size relative to viewport width
+  font-size: 2vw; /* Adjust paragraph font size relative to viewport width */
   line-height: 1.5;
+  border-color: #333333; /* Add border color */
 }
 
 @media screen and (max-width: $screen-xs-max) {
   .homepage-story .story-content {
-    padding: 5%; // Adjust padding for smaller screens
+    padding: 5%; /* Adjust padding for smaller screens */
   }
   
   .homepage-story .story-content h1 {
-    font-size: 6vw; // Adjust heading font size for smaller screens
+    font-size: 6vw; /* Adjust heading font size for smaller screens */
   }
   
   .homepage-story .story-content p {
-    font-size: 4vw; // Adjust paragraph font size for smaller screens
+    font-size: 4vw; /* Adjust paragraph font size for smaller screens */
   }
 }
