@@ -6,6 +6,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center; // Center vertically
   padding: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -13,6 +14,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   white-space: nowrap; // Prevent text from wrapping
   line-height: 1; // Ensure the text stays on one line
+  animation: borderInOut 3s infinite alternate; // Add in-and-out effect to border
+}
+
+@keyframes borderInOut {
+  0% {
+    border-width: 2px;
+  }
+  100% {
+    border-width: 5px;
+  }
 }
 
 .homepage-story {
