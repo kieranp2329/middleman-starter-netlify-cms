@@ -1,5 +1,6 @@
 .homepage-story {
   background: $secondary-color;
+  height: 75%; /* Adjust height to 75% of the current size */
 
   .story-content {
     @extend %column;
@@ -8,21 +9,27 @@
     padding-bottom: 5%;
     color: rgba(255, 255, 255, 1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h1 {
-      margin: 0 0 15px;
+      margin: 0;
       font-size: 3vw;
       font-weight: 700;
     }
 
     p {
       margin: 0;
-      font-size: 24px;
-      line-height: 36px;
-      
+      font-size: 1.5em; /* Set font size to 1.5em */
+      line-height: 1.5; /* Set line height to 1.5 */
+      width: 100%; /* Make the paragraph width span across the entire page */
+      white-space: nowrap; /* Prevent line breaks */
+      overflow: hidden; /* Hide overflow text */
+      text-overflow: ellipsis; /* Add ellipsis for overflow text */
     }
 
-    @media screen and(max-width: $screen-xs-max){
+    @media screen and (max-width: $screen-xs-max) {
       padding-top: 30px;
       padding-bottom: 30px;
 
