@@ -4,12 +4,12 @@
   .story-content {
     @extend %column;
     @extend %col-sm-8;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: rgba(255, 255, 255, 1);
     text-align: center;
 
-    h2 {
+    h1 {
       margin: 0 0 15px;
       font-size: 32px;
       font-weight: 700;
