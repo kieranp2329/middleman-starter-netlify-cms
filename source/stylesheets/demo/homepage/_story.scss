@@ -12,7 +12,6 @@
   text-align: center;
   border: 0.29em solid $secondary-color; // Set border thickness relative to font size
   border-radius: 2%; // Adjust border radius as needed
-  animation: bobbing 2s infinite alternate; // Adjust animation duration
 }
 
 @keyframes bobbing {
