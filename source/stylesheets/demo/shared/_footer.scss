@@ -18,12 +18,17 @@ footer {
   .footer-content {
     padding: 30px 15px 60px;
     color: #fff; /* Set text color to white */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: flex-start; /* Align items at the start */
   }
 
   .newsletter {
     @extend %column;
     @extend %col-md-6;
     @extend %col-sm-8;
+    margin-bottom: 20px; /* Add margin to separate from other items */
   }
 
   .social {
@@ -31,19 +36,18 @@ footer {
     @extend %col-md-6;
     @include clearfix;
     margin-top: 40px;
-    .icons {
-      float: right;
-    }
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items at the end */
+    
     a {
-      display: inline-block;
-      text-align: right;
-      margin-left: 15px;
+      margin-left: 15px; /* Add margin between social links */
       width: 60px; 
       height: 60px;
       padding: 15px;
       background-color: #fff;
       border-radius: 50%;
     }
+
     img {
       width: 100%;
     }
