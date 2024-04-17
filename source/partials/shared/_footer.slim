@@ -1,20 +1,8 @@
 footer
-  = partial 'partials/shared/header-primary'
-    
+  .header-primary
+    .navigation
+      a href='/terms' Terms
   .footer-content
-    .container-fluid
-      .row
-        .newsletter
-          form
-            label for="email" Sign up for our newsletter
-            input type="email" name="email" placeholder="Your email address"
-            button type="submit" Submit
-
-        .social
-          .icons
-            = link_to '#'
-              = image_tag "social/facebook.svg"
-            = link_to '#'
-              = image_tag "social/twitter.svg"
-            = link_to 'https://github.com/tomrutgers/middleman-starter-netlify-cms'
-              = image_tag "social/github.svg"
+    .newsletter
+    .social
+      .icons
