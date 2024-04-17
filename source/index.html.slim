@@ -54,6 +54,11 @@ style.
   |   margin-bottom: 20px; /* Adjust as needed */
   | }
   |
+  | h1.auction-header {
+  |   font-size: 2em;
+  |   margin-bottom: 10px;
+  | }
+  |
   | .news-items {
   |   display: grid;
   |   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -80,7 +85,7 @@ section.homepage-story
 
 section.homepage-products.products
   .container
-    h1
+    h1.auction-header
       | Current Auction Items
     .row
     - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.first(3).each do | _filename, product |
@@ -88,7 +93,7 @@ section.homepage-products.products
 
 section.homepage-products.products
   .container
-    h1
+    h1.auction-header
       | Buy It Now Items
     .row
     - data.buyititems.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, item) |
