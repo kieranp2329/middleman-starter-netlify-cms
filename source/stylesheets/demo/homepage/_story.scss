@@ -1,40 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-
-.story-content {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; // Center vertically
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Add shadow effect
-  white-space: nowrap; // Prevent text from wrapping
-  line-height: 1; // Ensure the text stays on one line
-  animation: borderInOut 3s ease-in-out infinite alternate; // Add in-and-out effect to border
-}
-
-@keyframes borderInOut {
-  0% {
-    border-width: 2px;
-  }
-  100% {
-    border-width: 8px; // Increase border width for a more obvious effect
-  }
-}
-
 .homepage-story {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
+  background: $secondary-color;
 
-@media screen and (max-width: 768px) {
   .story-content {
-    font-size: calc(100% - 1vw); // Adjust font size proportionally with viewport width
-    padding: 10px; // Adjust padding for smaller screens
+    @extend %column;
+    @extend %col-sm-8;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+
+    h1 {
+      margin: 0 0 15px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      font-size: 24px;
+      line-height: 36px;
+      
+    }
+
+    @media screen and(max-width: $screen-xs-max){
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
   }
 }
