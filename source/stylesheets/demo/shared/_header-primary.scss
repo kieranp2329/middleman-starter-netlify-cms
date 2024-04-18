@@ -9,8 +9,8 @@
   .logo {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-left: 0.5rem; /* Adjust padding as needed */
+    transform: translateY(-50%);
     z-index: 1000;
   }
 
