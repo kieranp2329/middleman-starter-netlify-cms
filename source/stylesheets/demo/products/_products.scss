@@ -11,6 +11,8 @@
     @extend %column;
     @extend %col-sm-4;
     @extend %product;
+    height: 300px; /* Set a fixed height for each product container */
+    overflow: hidden; /* Hide any overflow content */
   }
 
   @media screen and (max-width: $screen-xs-max) {
@@ -38,7 +40,7 @@
 
   .product img {
     max-width: 100%; /* Ensure image does not exceed container width */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Add some spacing between images */
+    max-height: 100%; /* Limit image height to fit within product container */
+    object-fit: cover; /* Maintain aspect ratio and fill container */
   }
 }
