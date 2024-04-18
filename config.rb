@@ -1,4 +1,4 @@
-#Bootstrap is used to style bits of the demo. Remove it from the config, gemfile and stylesheets to stop using bootstrap
+# Bootstrap is used to style bits of the demo. Remove it from the config, gemfile and stylesheets to stop using bootstrap
 require "uglifier"
 
 # Activate and configure extensions
@@ -97,4 +97,6 @@ configure :build do
   #Use asset hashes to use for caching
   #activate :asset_hash
 
+  # Custom 404 page
+  page "/404.html", :directory_index => false
 end
