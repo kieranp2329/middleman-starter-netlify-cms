@@ -5,23 +5,10 @@ section.products
     .search-bar style="margin: 10px;"
       input#search-input type="text" placeholder="Search by product title" style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; width: 100%; box-sizing: border-box;"
     .row
+      //product is structured: ['filename', 'data']
+      //sort by newest product
       - data.products.sort {|(_filename_a, a),(_filename_b, b)| a.date <=> b.date}.each do | (_filename, product) |
+
+        //to get the actual data:
         = partial 'partials/products/product', locals: {product: product}
   script src="/searchproducts.js"
-  script.
-    | document.addEventListener('DOMContentLoaded', function() {
-    |   var searchInput = document.getElementById('search-input');
-    |   searchInput.addEventListener('input', function() {
-    |     var searchValue = searchInput.value.toLowerCase().trim();
-    |     var products = document.querySelectorAll('.product');
-    | 
-    |     products.forEach(function(product) {
-    |       var title = product.querySelector('.title').innerText.toLowerCase();
-    |       if (title.includes(searchValue)) {
-    |         product.style.display = 'block';
-    |       } else {
-    |         product.style.display = 'none';
-    |       }
-    |     });
-    |   });
-    | });
