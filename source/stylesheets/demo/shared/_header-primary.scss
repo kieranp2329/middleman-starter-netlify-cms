@@ -9,9 +9,11 @@
   .logo {
     position: absolute;
     top: 50%;
-    padding-left: 0.5rem; /* Adjust padding as needed */
+    padding-left: 1rem; /* Adjust padding as needed */
     transform: translateY(-50%);
     z-index: 1000;
+    width: 2rem; /* Set relative width */
+    height: auto; /* Maintain aspect ratio */
   }
 
   ul {
