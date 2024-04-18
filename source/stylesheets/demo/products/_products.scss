@@ -24,8 +24,13 @@
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax value for desired image width */
     gap: 20px;
     justify-content: center;
+  }
+
+  .product img {
+    width: 100%; /* Make images fill their container */
+    height: auto; /* Maintain aspect ratio */
   }
 }
