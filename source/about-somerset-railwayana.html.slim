@@ -15,17 +15,32 @@ section.terms-and-conditions
       |   line-height: 1.6;
       |   margin-bottom: 15px;
       | }
-      | ul {
-      |   margin-bottom: 15px;
+      | .about-us-list {
+      |   list-style-type: none;
+      |   padding-left: 0;
       | }
-      | li {
-      |   margin-bottom: 10px;
+      | .about-us-list li::before {
+      |   content: "•";
+      |   margin-right: 10px;
+      |   color: #007bff; /* Adjust as needed */
       | }
     h2
       | About Us
     .terms-content
       p
-        | Somerset Railwayana has been serving railway enthusiasts since 1992, specializing in the sale of hardware and railwayana. Founded by Brian J Harding (BJH), the company has deep roots in the railway community.
-      ul
-        li BJH's passion for railway memorabilia dates back to 1962 when he received a gift of B&E (Bristol and Exeter) labels from the station master at Wells station. This sparked his lifelong love for collecting and preserving railway history.
-        li In 1995, Brian began hosting auctions, initially conducting around four per year. These auctions = gained popularity and became a cherished event in the railwayana community.
+        | Somerset Railwayana, established in 1992, is a trusted name in the railway memorabilia industry. Founded by Brian J Harding (BJH), our company specializes in the sale of hardware and railwayana.
+      p
+        | Brian's journey in railway memorabilia began in 1962 when he received a heartfelt gift of B&E (Bristol and Exeter) labels from the station master at Wells station. This ignited his passion for collecting and preserving railway history.
+      p
+        | In 1995, Brian initiated auctions, starting with around four per year. These auctions, held regularly, have become prominent events in the railwayana community.
+      h3
+        | Key Highlights:
+      ul.about-us-list
+        li
+          | Established in 1992
+        li
+          | Specializes in hardware and railwayana sales
+        li
+          | Brian J Harding (BJH) began collecting in 1962 after receiving a gift of B&E labels
+        li
+          | Started auctions in 1995, initially hosting around four per year
