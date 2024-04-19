@@ -46,21 +46,6 @@ data.products.each do |_filename, product|
   ignore: true
 end
 
-# Route for comments page
-proxy "/comments/index.html", "/comments.html"
-
-# Define a helper method to load and save comments from/to YAML file
-helpers do
-  def load_comments
-    data.comments ||= []
-  end
-
-  def save_comments(comments)
-    data.comments = comments
-    File.open('source/data/comments.yml', 'w') { |f| YAML.dump(comments, f) }
-  end
-end
-
 # Route for handling form submission
 post '/submit_comment' do
   name = params['name']
@@ -70,7 +55,6 @@ post '/submit_comment' do
   comments << { 'name' => name, 'comment' => comment }
   save_comments(comments)
 
-  redirect '/comments'
 end
 
 # Helpers
