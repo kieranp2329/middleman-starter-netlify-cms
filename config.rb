@@ -1,4 +1,3 @@
-# Bootstrap is used to style bits of the demo. Remove it from the config, gemfile and stylesheets to stop using bootstrap
 require "uglifier"
 
 # Activate and configure extensions
@@ -99,4 +98,11 @@ configure :build do
 
   # Custom 404 page
   page "/404.html", :directory_index => false
+end
+
+# Handle comments form submissions
+post '/comments' do
+  data.comments << { name: params[:name], content: params[:content] }
+  save_data(data, 'comments.yml')
+  redirect '/comments'
 end

@@ -1,0 +1,24 @@
+---
+title: Comments
+layout: layout
+---
+
+section.comments
+  h2 Comments
+
+  .comments-list
+    - data.comments.each do |comment|
+      .comment
+        p
+          strong = comment.name
+          | : #{comment.content}
+
+  .comment-form
+    h3 Add a Comment
+    form method="post" action="/comments"
+      label for="name" Name:
+      input type="text" id="name" name="name" required
+
+      label for="content" Comment:
+      textarea id="content" name="content" rows="4" required
+      button type="submit" Submit
