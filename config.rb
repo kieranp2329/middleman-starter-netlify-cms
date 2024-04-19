@@ -46,8 +46,6 @@ data.products.each do |_filename, product|
   ignore: true
 end
 
-
-
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
@@ -63,6 +61,12 @@ data.buyititems.each do |(_filename, item)|
   proxy "/buyititems/#{item.title.parameterize}/index.html", "/buyititem.html", :locals => { :item => item }, :ignore => true
 end
 
+# Handle comments form submissions
+post '/comments' do
+  data.comments << { name: params[:name], content: params[:content] }
+  save_data(data, 'comments.yml')
+  redirect '/comments'
+end
 
 helpers do
   #helper to set background images with asset hashes in a style attribute
@@ -99,11 +103,4 @@ configure :build do
 
   # Custom 404 page
   page "/404.html", :directory_index => false
-end
-
-# Handle comments form submissions
-post '/comments' do
-  data.comments << { name: params[:name], content: params[:content] }
-  save_data(data, 'comments.yml')
-  redirect '/comments'
 end
