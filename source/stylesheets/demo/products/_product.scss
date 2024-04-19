@@ -21,6 +21,8 @@
   img {
     @extend %img-responsive;
     max-height: 20vh;
+    max-width: auto;
+
   }
 
   .product-image, .product-content {
