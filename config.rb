@@ -46,17 +46,6 @@ data.products.each do |_filename, product|
   ignore: true
 end
 
-# Route for handling form submission
-post '/submit_comment' do
-  name = params['name']
-  comment = params['comment']
-
-  comments = load_comments
-  comments << { 'name' => name, 'comment' => comment }
-  save_comments(comments)
-
-end
-
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
