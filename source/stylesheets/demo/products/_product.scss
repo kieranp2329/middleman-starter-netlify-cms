@@ -54,15 +54,3 @@
   }
 }
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 100%; /* Adjust this width according to your design */
-}
