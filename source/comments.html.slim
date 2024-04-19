@@ -1,0 +1,15 @@
+.container
+  h1 Comments
+  - load_comments.each do |comment|
+    .comment
+      p Name: #{comment['name']}
+      p Comment: #{comment['comment']}
+
+form action="/submit_comment" method="post"
+  label for="name" Name:
+  input type="text" name="name" id="name" required
+  br
+  label for="comment" Comment:
+  textarea name="comment" id="comment" required
+  br
+  button type="submit" Submit Comment
