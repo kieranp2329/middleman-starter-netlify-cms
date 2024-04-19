@@ -11,6 +11,8 @@
     @extend %column;
     @extend %col-sm-4;
     @extend %product;
+    height: 60vh;
+    padding-bottom: 1vw;
   }
 
   @media screen and (max-width: $screen-xs-max) {
