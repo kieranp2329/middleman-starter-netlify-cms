@@ -1,8 +1,6 @@
 %product {
   color: $text-color;
   margin-bottom: 30px;
-  
-  
 
   &:hover, &:focus {
     a {
@@ -20,6 +18,9 @@
 
   img {
     @extend %img-responsive;
+    object-fit: cover; // Ensure all images maintain aspect ratio
+    height: 100%; // Ensure images take up full height of their containers
+    width: 100%; // Ensure images take up full width of their containers
   }
 
   .product-image, .product-content {
@@ -53,4 +54,3 @@
     margin-bottom: 15px;
   }
 }
-
