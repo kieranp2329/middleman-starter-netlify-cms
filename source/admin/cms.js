@@ -1,5 +1,3 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
 const contentApi = require("netlify").createClient({ accessToken: process.env.l6aquQgPu8npxVmQoiZpSSfiY416PupNB4hr8iS7RtM });
 
 contentApi.on("login", () => {
@@ -33,24 +31,6 @@ async function handleProductUpdate(event) {
       const lot = latestProduct.data.weight + 1;
       const filePath = `/data/products/${latestProduct.name}`;
       await contentApi.updateSiteFile(filePath, { ...latestProduct.data, weight: lot });
-
-      // Calculate total auction price
-      let totalauctionprice = 0;
-      for (const product of products) {
-        if (product.extension === "yml") {
-          const filePath = `.${product.path}`;
-          const fileContents = fs.readFileSync(filePath, 'utf8');
-          const productData = yaml.safeLoad(fileContents);
-          totalauctionprice += parseFloat(productData.price) || 0;
-        }
-      }
-
-      // Dispatch event with total auction price
-      const totalauctionpriceEvent = new CustomEvent('totalauctionpriceupdate', {
-        detail: { totalauctionprice }
-      });
-      window.dispatchEvent(totalauctionpriceEvent);
-
     } catch (error) {
       console.error(`Error updating product: ${error.message}`);
     }
