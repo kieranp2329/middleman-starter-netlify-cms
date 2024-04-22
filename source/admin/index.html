@@ -51,26 +51,26 @@
                 });
         </script>
                 <script>
-                  // JavaScript code to fetch and calculate total price
+                  // JavaScript code to fetch and calculate total price for Buy It Now items
                   fetch('https://eluglab.com/buyititems/')
                       .then(response => response.text())
                       .then(data => {
                           // Parse the HTML content
                           const parser = new DOMParser();
                           const htmlDoc = parser.parseFromString(data, 'text/html');
-          
+              
                           // Extract prices from the HTML
-                          const prices = htmlDoc.querySelectorAll('.price div');
-          
+                          const prices = htmlDoc.querySelectorAll('.price');
+              
                           // Calculate total price
                           let totalPrice = 0;
                           prices.forEach(priceElement => {
-                              const priceText = priceElement.textContent;
+                              const priceText = priceElement.textContent.trim();
                               const price = parseFloat(priceText.replace('Current Price: £', ''));
                               totalPrice += price;
                           });
-          
-                          // Display total price on your website
+              
+                          // Display total price of Buy It Now items on your website
                           document.getElementById('totalPriceBuy').textContent = `Total Price: £${totalPrice.toFixed(2)}`;
                       })
                       .catch(error => {
@@ -78,5 +78,6 @@
                           document.getElementById('totalPriceBuy').textContent = 'Error fetching data';
                       });
               </script>
+              
   </body>
 </html>
