@@ -23,8 +23,8 @@
         
     
         <script>
-          // Check if the current URL does not contain '/admin'
-          if (window.location.href.indexOf('/admin') === -1) {
+          // Check if the current URL does not exactly match 'https://eluglab.com/admin'
+          if (window.location.href !== 'https://eluglab.com/admin') {
               // JavaScript code to fetch and calculate total price
               fetch('https://eluglab.com/products/')
                   .then(response => response.text())
@@ -54,8 +54,8 @@
           }
       </script>
       <script>
-          // Check if the current URL does not contain '/admin'
-          if (window.location.href.indexOf('/admin') === -1) {
+          // Check if the current URL does not exactly match 'https://eluglab.com/admin'
+          if (window.location.href !== 'https://eluglab.com/admin') {
               // JavaScript code to fetch and calculate total price for Buy It Now items
               fetch('https://eluglab.com/buyititems/')
                   .then(response => response.text())
@@ -84,6 +84,7 @@
                   });
           }
       </script>
+      
       
   </body>
 </html>
