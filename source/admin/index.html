@@ -23,61 +23,67 @@
         
     
         <script>
-            // JavaScript code to fetch and calculate total price
-            fetch('https://eluglab.com/products/')
-                .then(response => response.text())
-                .then(data => {
-                    // Parse the HTML content
-                    const parser = new DOMParser();
-                    const htmlDoc = parser.parseFromString(data, 'text/html');
-    
-                    // Extract prices from the HTML
-                    const prices = htmlDoc.querySelectorAll('.price p');
-    
-                    // Calculate total price
-                    let totalPrice = 0;
-                    prices.forEach(priceElement => {
-                        const priceText = priceElement.textContent;
-                        const price = parseFloat(priceText.replace('Current Price: £', ''));
-                        totalPrice += price;
-                    });
-    
-                    // Display total price on your website
-                    document.getElementById('totalPrice').textContent = `Total Price: £${totalPrice.toFixed(2)}`;
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    document.getElementById('totalPrice').textContent = 'Error fetching data';
-                });
-        </script>
-                <script>
-                  // JavaScript code to fetch and calculate total price for Buy It Now items
-                  fetch('https://eluglab.com/buyititems/')
-                      .then(response => response.text())
-                      .then(data => {
-                          // Parse the HTML content
-                          const parser = new DOMParser();
-                          const htmlDoc = parser.parseFromString(data, 'text/html');
-              
-                          // Extract prices from the HTML
-                          const prices = htmlDoc.querySelectorAll('.price');
-              
-                          // Calculate total price
-                          let totalPrice = 0;
-                          prices.forEach(priceElement => {
-                              const priceText = priceElement.textContent.trim();
-                              const price = parseFloat(priceText.replace('Current Price: £', ''));
-                              totalPrice += price;
-                          });
-              
-                          // Display total price of Buy It Now items on your website
-                          document.getElementById('totalPriceBuy').textContent = `Total Price: £${totalPrice.toFixed(2)}`;
-                      })
-                      .catch(error => {
-                          console.error('Error fetching data:', error);
-                          document.getElementById('totalPriceBuy').textContent = 'Error fetching data';
+          // Check if the current URL does not contain '/admin'
+          if (window.location.href.indexOf('/admin') === -1) {
+              // JavaScript code to fetch and calculate total price
+              fetch('https://eluglab.com/products/')
+                  .then(response => response.text())
+                  .then(data => {
+                      // Parse the HTML content
+                      const parser = new DOMParser();
+                      const htmlDoc = parser.parseFromString(data, 'text/html');
+      
+                      // Extract prices from the HTML
+                      const prices = htmlDoc.querySelectorAll('.price p');
+      
+                      // Calculate total price
+                      let totalPrice = 0;
+                      prices.forEach(priceElement => {
+                          const priceText = priceElement.textContent;
+                          const price = parseFloat(priceText.replace('Current Price: £', ''));
+                          totalPrice += price;
                       });
-              </script>
-              
+      
+                      // Display total price on your website
+                      document.getElementById('totalPrice').textContent = `Total Price: £${totalPrice.toFixed(2)}`;
+                  })
+                  .catch(error => {
+                      console.error('Error fetching data:', error);
+                      document.getElementById('totalPrice').textContent = 'Error fetching data';
+                  });
+          }
+      </script>
+      <script>
+          // Check if the current URL does not contain '/admin'
+          if (window.location.href.indexOf('/admin') === -1) {
+              // JavaScript code to fetch and calculate total price for Buy It Now items
+              fetch('https://eluglab.com/buyititems/')
+                  .then(response => response.text())
+                  .then(data => {
+                      // Parse the HTML content
+                      const parser = new DOMParser();
+                      const htmlDoc = parser.parseFromString(data, 'text/html');
+      
+                      // Extract prices from the HTML
+                      const prices = htmlDoc.querySelectorAll('.price');
+      
+                      // Calculate total price
+                      let totalPrice = 0;
+                      prices.forEach(priceElement => {
+                          const priceText = priceElement.textContent.trim();
+                          const price = parseFloat(priceText.replace('Current Price: £', ''));
+                          totalPrice += price;
+                      });
+      
+                      // Display total price of Buy It Now items on your website
+                      document.getElementById('totalPriceBuy').textContent = `Total Price: £${totalPrice.toFixed(2)}`;
+                  })
+                  .catch(error => {
+                      console.error('Error fetching data:', error);
+                      document.getElementById('totalPriceBuy').textContent = 'Error fetching data';
+                  });
+          }
+      </script>
+      
   </body>
 </html>
