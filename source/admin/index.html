@@ -13,7 +13,18 @@
     <script src="https://unpkg.com/dayjs@^1.7.5/dayjs.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="previews.js" type="text/babel"></script>
-    <h1>Brian</h1>
+    <h1 id="totalPrice">Loading...</h1>
+    <script>
+      fetch('/data/products')
+        .then(response => response.json())
+        .then(products => {
+          const totalPrice = products
+            .filter(product => product.extension === 'yml')
+            .reduce((sum, product) => sum + product.data.price, 0);
+          document.getElementById('totalPrice').textContent = 'Current price of all products: £' + totalPrice.toFixed(2);
+        })
+        .catch(error => console.error('Error fetching product prices:', error));
+    </script>
     <script>
       CMS.registerPreviewStyle('/stylesheets/all.css');
     </script>
