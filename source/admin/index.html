@@ -60,7 +60,7 @@
                           const htmlDoc = parser.parseFromString(data, 'text/html');
           
                           // Extract prices from the HTML
-                          const prices = htmlDoc.querySelectorAll('.price p');
+                          const prices = htmlDoc.querySelectorAll('.price div');
           
                           // Calculate total price
                           let totalPrice = 0;
