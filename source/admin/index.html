@@ -8,6 +8,7 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" type="text/javascript"></script>
   </head>
   <body>
+    <div id="totalAuctionPrice">Loading...</div>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js" type="text/javascript"></script>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/dayjs@^1.7.5/dayjs.min.js"></script>
@@ -15,6 +16,20 @@
     <script src="previews.js" type="text/babel"></script>
     <script>
       CMS.registerPreviewStyle('/stylesheets/all.css');
+      
+      // Function to update total auction price dynamically
+      function updateTotalAuctionPrice(totalauctionprice) {
+        document.getElementById('totalAuctionPrice').innerText = `Total Auction Price: £${totalauctionprice.toFixed(2)}`;
+      }
+      
+      // Call updateTotalAuctionPrice with the initial value
+      updateTotalAuctionPrice(0); // Assuming initial value is 0
+      
+      // Add event listener to handle updates from cms.js
+      window.addEventListener('totalauctionpriceupdate', function(event) {
+        const totalauctionprice = event.detail.totalauctionprice;
+        updateTotalAuctionPrice(totalauctionprice);
+      });
     </script>
   </body>
 </html>

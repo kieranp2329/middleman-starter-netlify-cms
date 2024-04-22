@@ -44,7 +44,12 @@ async function handleProductUpdate(event) {
           totalauctionprice += parseFloat(productData.price) || 0;
         }
       }
-      console.log("Total Auction Price:", totalauctionprice);
+
+      // Dispatch event with total auction price
+      const totalauctionpriceEvent = new CustomEvent('totalauctionpriceupdate', {
+        detail: { totalauctionprice }
+      });
+      window.dispatchEvent(totalauctionpriceEvent);
 
     } catch (error) {
       console.error(`Error updating product: ${error.message}`);
