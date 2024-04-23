@@ -23,9 +23,6 @@
         
     
         <script>
-          // Check if the current URL does not exactly match 'https://eluglab.com/admin'
-          if (window.location.href !== 'https://eluglab.com/admin/#/') {
-              // JavaScript code to fetch and calculate total price
               fetch('https://eluglab.com/products/')
                   .then(response => response.text())
                   .then(data => {
@@ -51,12 +48,9 @@
                       console.error('Error fetching data:', error);
                       document.getElementById('totalPrice').textContent = 'Error fetching data';
                   });
-          }
+          
       </script>
       <script>
-          // Check if the current URL does not exactly match 'https://eluglab.com/admin'
-          if (window.location.href !== 'https://eluglab.com/admin/#/') {
-              // JavaScript code to fetch and calculate total price for Buy It Now items
               fetch('https://eluglab.com/buyititems/')
                   .then(response => response.text())
                   .then(data => {
@@ -82,7 +76,7 @@
                       console.error('Error fetching data:', error);
                       document.getElementById('totalPriceBuy').textContent = 'Error fetching data';
                   });
-          }
+          
       </script>
       
       
