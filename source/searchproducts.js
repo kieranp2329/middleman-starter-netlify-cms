@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     products.forEach(function(product) {
       const title = product.querySelector('.title').textContent.toLowerCase();
+      const weight = product.querySelector('.weight').textContent.toLowerCase();
 
-      if (title.includes(searchTerm)) {
+      if (title.includes(searchTerm) || weight.includes(searchTerm)) {
         product.style.display = 'block';
       } else {
         product.style.display = 'none';
