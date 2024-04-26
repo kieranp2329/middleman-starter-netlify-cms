@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to handle search
   const handleSearch = function() {
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput.value.trim().toLowerCase();
 
     products.forEach(function(product) {
       const title = product.querySelector('.title').textContent.toLowerCase();
